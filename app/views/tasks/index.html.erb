@@ -1,0 +1,10 @@
+<h1>Task List</h1>
+<% @tasks.each do |task| %>
+  <div class="task">
+    <h2><%= task.title %></h2>
+    <p><%= task.description %></p>
+    <p>Status: <%= task.completed ? "Completed" : "Pending" %></p>
+    <%= link_to 'View Task', task_path(task) %>
+  </div>
+<% end %>
+<%= link_to 'Create New Task', new_task_path %>
