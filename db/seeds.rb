@@ -33,3 +33,11 @@ Task.find_or_create_by!(title: "Fix bugs") do |task|
   task.description = "Address reported issues in bug tracker"
   task.completed = false
 end
+
+puts "Seeded tasks successfully."
+
+User.find_or_create_by!(email: "email@gmail.com") do |user|
+  user.password = "securepassword"
+end
+
+puts "Seeded users successfully."
