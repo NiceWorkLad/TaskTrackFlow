@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        sessions: "users/sessions"
       }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -17,10 +17,9 @@ Rails.application.routes.draw do
 
   resources :tasks
 
-  get 'public_tasks', to: 'tasks#public', as: 'public_tasks'
+  get "public_tasks", to: "tasks#public", as: "public_tasks"
 
-  resources :users, only: [:show, :index]
+  resources :users, only: [ :show, :index ]
 
   root to: "tasks#index"
-
 end
