@@ -5,10 +5,11 @@
         <li class="nav-item">
           <%= link_to "Public Tasks", public_tasks_path, class: "nav-link" %>
         </li>
+        <% if user_signed_in? %> 
         <li  class="nav-item">
           <%= link_to "New Task", new_task_path, class: "nav-link" %>
-        </li>
-        <% if user_signed_in? %>
+        </li> 
+        
           <li class="nav-item">
             <%= link_to "My Tasks", tasks_path, class: "nav-link" %>
           </li>
@@ -31,8 +32,5 @@
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to "Edit profile", edit_user_registration_path, class: "navbar-link" %> |
   <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "navbar-link"  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, class: "navbar-link"  %> |
-  <%= link_to "Login", new_user_session_path, class: "navbar-link"  %>
 <% end %>
 </p>
