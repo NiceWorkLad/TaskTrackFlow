@@ -3,6 +3,10 @@ class TasksController < ApplicationController
     @tasks = Task.all
 
     @user = current_user
+
+    if @user
+      @tasks = @user.tasks
+    end
   end
 
   def show
@@ -14,13 +18,13 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
-    if @task.save
-      redirect_to tasks_path(@task), notice: "Task was successfully created."
-    else
-      render :new
-    end
+  @task = current_user.tasks.new(task_params)
+  if @task.save
+    redirect_to tasks_path(@task), notice: "Task was successfully created."
+  else
+    render :new
   end
+end
 
     def edit
       @task = Task.find(params[:id])
