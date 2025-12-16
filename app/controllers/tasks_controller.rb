@@ -9,6 +9,11 @@ class TasksController < ApplicationController
     end
   end
 
+  def public
+    @userPublicTasks = current_user.tasks.where(public: true) if current_user
+    @publicTasks = Task.where(public: true)
+  end
+
   def show
     @task = Task.find(params[:id])
   end
@@ -48,6 +53,6 @@ end
   private
 
   def task_params
-    params.require(:task).permit(:title, :description, :completed)
+    params.require(:task).permit(:title, :description, :completed, :public)
   end
 end
