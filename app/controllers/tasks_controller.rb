@@ -24,16 +24,16 @@ class TasksController < ApplicationController
 
   def create
   @task = current_user.tasks.new(task_params)
-  if @task.save
-    redirect_to tasks_path(@task), notice: "Task was successfully created."
-  else
-    render :new
-  end
-end
-
-    def edit
-      @task = Task.find(params[:id])
+    if @task.save
+      redirect_to tasks_path(@task), notice: "Task was successfully created."
+    else
+      render :new
     end
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
 
   def update
     @task = Task.find(params[:id])
