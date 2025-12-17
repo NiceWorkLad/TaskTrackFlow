@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def public
+  def public_index
     @userPublicTasks = current_user.tasks.where(public: true) if current_user
     @publicTasks = Task.where(public: true)
   end
