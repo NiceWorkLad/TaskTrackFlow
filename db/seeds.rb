@@ -9,35 +9,56 @@
 #   end
 
 # Create sample tasks
-Task.find_or_create_by!(title: "Setup project") do |task|
-  task.description = "Initialize Rails project and configure database"
-  task.status = "pending"
-end
-
-Task.find_or_create_by!(title: "Write documentation") do |task|
-  task.description = "Document API endpoints and usage"
-  task.status = "pending"
-end
-
-Task.find_or_create_by!(title: "Deploy to production") do |task|
-  task.description = "Deploy application to production server"
-  task.status = "in_progress"
-end
-
-Task.find_or_create_by!(title: "Code review") do |task|
-  task.description = "Review pull requests from team members"
-  task.status = "in_progress"
-end
-
-Task.find_or_create_by!(title: "Fix bugs") do |task|
-  task.description = "Address reported issues in bug tracker"
-  task.status = "completed"
-end
-
-puts "Seeded tasks successfully."
-
 User.find_or_create_by!(email: "email@gmail.com") do |user|
   user.password = "securepassword"
 end
 
 puts "Seeded users successfully."
+
+User.find_or_create_by!(email: "email2@gmail.com") do |user|
+  user.password = "securepassword2"
+end
+
+puts "Seeded users successfully."
+
+Task.find_or_create_by!(title: "Setup project") do |task|
+  task.description = "Initialize Rails project and configure database"
+  task.status = "pending"
+  task.public = true
+  task.due_date = Date.today + 77992.days
+  task.user = User.first
+end
+
+Task.find_or_create_by!(title: "Write documentation") do |task|
+  task.description = "Document API endpoints and usage"
+  task.status = "pending"
+  task.public = true
+  task.due_date = Date.today + 0.days
+  task.user = User.first
+end
+
+Task.find_or_create_by!(title: "Deploy to production") do |task|
+  task.description = "Deploy application to production server"
+  task.status = "in_progress"
+  task.public = false
+  task.due_date = Date.today + 28.days
+  task.user = User.first
+end
+
+Task.find_or_create_by!(title: "Code review") do |task|
+  task.description = "Review pull requests from team members"
+  task.status = "in_progress"
+  task.public = true
+  task.due_date = Date.today + 2.days
+  task.user = User.first
+end
+
+Task.find_or_create_by!(title: "Fix bugs") do |task|
+  task.description = "Address reported issues in bug tracker"
+  task.status = "completed"
+  task.public = false
+  task.due_date = Date.today + 6.days
+  task.user = User.first
+end
+
+puts "Seeded tasks successfully."
