@@ -11,27 +11,27 @@
 # Create sample tasks
 Task.find_or_create_by!(title: "Setup project") do |task|
   task.description = "Initialize Rails project and configure database"
-  task.completed = true
+  task.status = "pending"
 end
 
 Task.find_or_create_by!(title: "Write documentation") do |task|
   task.description = "Document API endpoints and usage"
-  task.completed = false
+  task.status = "pending"
 end
 
 Task.find_or_create_by!(title: "Deploy to production") do |task|
   task.description = "Deploy application to production server"
-  task.completed = false
+  task.status = "in_progress"
 end
 
 Task.find_or_create_by!(title: "Code review") do |task|
   task.description = "Review pull requests from team members"
-  task.completed = false
+  task.status = "in_progress"
 end
 
 Task.find_or_create_by!(title: "Fix bugs") do |task|
   task.description = "Address reported issues in bug tracker"
-  task.completed = false
+  task.status = "completed"
 end
 
 puts "Seeded tasks successfully."
