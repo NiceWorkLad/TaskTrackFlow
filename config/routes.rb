@@ -17,9 +17,9 @@ Rails.application.routes.draw do
 
   resources :tasks
 
-  get "public_tasks", to: "tasks#public", as: "public_tasks"
+  get "public_tasks", to: "tasks#public_index", as: "public_tasks"
 
   resources :users, only: [ :show, :index ]
 
-  root to: "tasks#index"
+  root to: "tasks#public_index"
 end
