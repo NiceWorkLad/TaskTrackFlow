@@ -1,21 +1,14 @@
 <h1 class="task-list-title">Your Task List</h1>
-<div class="task-list task-grid">
-  <% @tasks.each do |task| %>
-    <div class="task-item task-card">
-      <%= link_to task_path(task), class: "task-card__link" do %>
+<nav class="view-toggle">
+    <%= link_to "Grid",
+          tasks_path(view: "grid"),
+          class: ("active" if @view_mode == "grid") %>
 
-        <h2 class="task-card__title"><%= task.title %></h2>
-        <time class="task-card__created" datetime="<%= task.created_at.iso8601 %>">Created <%= time_ago_in_words(task.created_at) %> ago</time>
-        <time class="task-card__updated" datetime="<%= task.updated_at.iso8601 %>">Last updated <%= time_ago_in_words(task.updated_at) %> ago</time>
-        <time class="task-card__due-date" datetime="<%= task.due_date.iso8601 %>">Due in <%= distance_of_time_in_words(Date.today, task.due_date) %></time>
-        <p class="task-card__description"><%= truncate task.description, length: 140, separator: '', omission: '...' %></p>
-        <p class="task-card__status <%= task.status %>">
-          <%= task.status %>
-        </p>
-      <% end %>
-      <div class="task-card__actions">
-        <%= link_to "Edit", edit_task_path(task), class: "btn btn-edit" %>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <%= link_to "List",
+          tasks_path(view: "list"),
+          class: ("active" if @view_mode == "list") %>
+  </nav>
+  <%# Index layout renderer %>
+<section class="tasks-index tasks-index--<%= @view_mode %>">
+  <%= render "tasks/#{@view_mode}", tasks: @tasks %>
+</section>

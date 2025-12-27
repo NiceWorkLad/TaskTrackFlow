@@ -1,8 +1,9 @@
 class TasksController < ApplicationController
   def index
-    @tasks = current_user.tasks.order(due_date: :asc)
+        @tasks = current_user.tasks.order(due_date: :asc)
 
     @user = current_user
+    @view_mode = params[:view].presence_in(%w[grid list]) || "grid"
 
     if @user
       @tasks = @user.tasks
