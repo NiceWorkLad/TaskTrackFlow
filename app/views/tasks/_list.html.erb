@@ -1,1 +1,11 @@
-<h3>this is list mode</h3>
+<div class="task-list task-grid">
+  <% @tasks.each do |task| %>
+    <div class="task-item task-card">
+      <%= link_to task_path(task), class: "task-card__link" do %>
+
+        <h4 class="task-card__title"><%= task.title %></h4>
+        </p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
