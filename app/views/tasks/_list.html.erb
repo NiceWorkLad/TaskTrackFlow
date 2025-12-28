@@ -2,8 +2,12 @@
   <% @tasks.each do |task| %>
     <div class="task-item task-card">
       <%= link_to task_path(task), class: "task-card__link" do %>
-
+        <div class="task-display-list">
         <h4 class="task-card__title"><%= task.title %></h4>
+        <div class="">
+        <time class="task-card__created" datetime="<%= task.created_at.iso8601 %>">Created <%= time_ago_in_words(task.created_at) %> ago</time>
+        </div>
+        </div>
         </p>
       <% end %>
     </div>
