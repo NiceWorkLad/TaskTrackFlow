@@ -1,14 +1,18 @@
 <h1 class="task-list-title">Public Task List</h1>
 <nav class="view-toggle">
-  <%= link_to "Grid",
-        url_for(params.permit!.merge(view: "grid")),
+  <%= link_to url_for(params.permit!.merge(view: "grid")),
         data: { turbo_frame: "tasks_view" },
-        class: ("active" if @view_mode == "grid") %>
+        class: ("active" if @view_mode == "grid") do %>
+    Grid
+    <%= render "shared/icons/grid" %>
+  <% end %>
 
-  <%= link_to "List",
-        url_for(params.permit!.merge(view: "list")),
+  <%= link_to url_for(params.permit!.merge(view: "list")),
         data: { turbo_frame: "tasks_view" },
-        class: ("active" if @view_mode == "list") %>
+        class: ("active" if @view_mode == "list") do %>
+    List
+    <%= render "shared/icons/list" %>
+  <% end %>
 </nav>
 
 

@@ -25,3 +25,24 @@
   gap: 5px;
   align-items: center;
 }
+
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-toggle__button {
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: #666;
+}
+
+.view-toggle__button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.view-toggle__button.active {
+  background: #eee;
+  color: #000;
+}
