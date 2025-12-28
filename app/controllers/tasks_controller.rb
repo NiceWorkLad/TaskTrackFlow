@@ -1,9 +1,11 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!, except: [:public_index, :show]
+  before_action :set_view_mode, only: [:index, :public_index]
+
   def index
         @tasks = current_user.tasks.order(due_date: :asc)
 
     @user = current_user
-    @view_mode = params[:view].presence_in(%w[grid list]) || "grid"
 
     if @user
       @tasks = @user.tasks
@@ -11,8 +13,7 @@ class TasksController < ApplicationController
   end
 
   def public_index
-    @userPublicTasks = current_user.tasks.where(public: true) if current_user
-    @publicTasks = Task.where(public: true)
+    @tasks = Task.where(public: true)
   end
 
   def show
@@ -55,5 +56,13 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title, :description, :status, :public)
+  end
+
+  def set_view_mode
+    if params[:view].present? && %w[grid list].include?(params[:view])
+      session[:view_mode] = params[:view]
+    end
+
+    @view_mode = session[:view_mode] || "list"
   end
 end

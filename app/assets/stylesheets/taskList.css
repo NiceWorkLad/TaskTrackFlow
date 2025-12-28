@@ -1,8 +1,15 @@
-.task-card {
+.task-card-grid {
   border: 5px solid #ccc;
   border-radius: 5px;
   padding: 0px 60px 0px 60px;
   margin-bottom: 10px;
+}
+
+.task-card-list {
+  border: 5px solid #ccc;
+  border-radius: 5px;
+  padding: 0px 20px 0px 20px;
+  margin-bottom: 20px;
 }
 
 .task-display-list{
@@ -10,4 +17,11 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.task-card-list-info {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
 }

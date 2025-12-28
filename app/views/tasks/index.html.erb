@@ -1,13 +1,16 @@
 <h1 class="task-list-title">Your Task List</h1>
 <nav class="view-toggle">
-    <%= link_to "Grid",
-          tasks_path(view: "grid"),
-          class: ("active" if @view_mode == "grid") %>
+  <%= link_to "Grid",
+        url_for(params.permit!.merge(view: "grid")),
+        data: { turbo_frame: "tasks_view" },
+        class: ("active" if @view_mode == "grid") %>
 
-    <%= link_to "List",
-          tasks_path(view: "list"),
-          class: ("active" if @view_mode == "list") %>
-  </nav>
+  <%= link_to "List",
+        url_for(params.permit!.merge(view: "list")),
+        data: { turbo_frame: "tasks_view" },
+        class: ("active" if @view_mode == "list") %>
+</nav>
+
   <%# Index layout renderer %>
 <section class="tasks-index tasks-index--<%= @view_mode %>">
   <%= render "tasks/#{@view_mode}", tasks: @tasks %>
