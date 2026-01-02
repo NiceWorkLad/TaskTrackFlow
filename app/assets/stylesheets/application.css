@@ -10,6 +10,8 @@
  */
 
 @import url("navbar.css");
+@import url("taskList.css");
+
 
 .notice {
   background-color: #d4edda;
@@ -40,4 +42,41 @@
   .container {
     padding: 0 15px;
   }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .notice,
+  .alert {
+    padding: 10px 15px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+svg {
+  vertical-align: middle;
+  width:20px;
+  height:20px;
 }
