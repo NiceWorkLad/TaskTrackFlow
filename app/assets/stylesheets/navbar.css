@@ -4,7 +4,7 @@
   align-items: center;
   padding: 1rem 2rem;
   color: white;
-  box-shadow:inset 0 -3px 0 0 #4CAF50;
+  box-shadow:inset 0 -3px 0 0 #646464;
 }
 
 .navbar a {
@@ -28,11 +28,11 @@
 }
 
 .navbar-nav a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .navbar-nav a:hover {
-  color: #4CAF50;
+  color: #a1a1a1;
 }
