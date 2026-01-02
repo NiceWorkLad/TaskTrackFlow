@@ -46,3 +46,13 @@
   background: #eee;
   color: #000;
 }
+
+.task-card-display-list {
+  width: 100%;
+  background:#fff;
+  border:solid 1px #ddd;
+}
+
+.task-card-display-list:hover {
+  background:#000;
+}

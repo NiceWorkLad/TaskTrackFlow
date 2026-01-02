@@ -1,6 +1,6 @@
 <div class="task-list task-grid">
   <% @tasks.each do |task| %>
-    <div class="task-item task-card-list">
+    <div class="task-item task-card-display-list">
       <%= link_to task_path(task), class: "task-card__link" do %>
         <div class="task-display-list">
         <h4 class="task-card__title"><%= task.title %></h4>
