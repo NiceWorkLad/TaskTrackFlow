@@ -1,7 +1,6 @@
 <div class="tasks-header">
 <h1 class="task-list-title">Public Task List</h1>
 <nav class="view-toggle">
-</div>
   <%= link_to url_for(params.permit!.merge(view: "grid")),
         data: { turbo_frame: "tasks_view" },
         class: ("active" if @view_mode == "grid") do %>
@@ -14,6 +13,7 @@
     <svg><%= render "shared/icons/list" %></svg>
   <% end %>
 </nav>
+</div>
 
 
 <section class="tasks-index tasks-index--<%= @view_mode %>">

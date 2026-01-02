@@ -5,11 +5,16 @@
   margin-bottom: 10px;
 }
 
-.task-header {
+.tasks-header {
   display: flex;
-  justify-content: space-between;
-flex-direction: row;
-  margin-bottom: 20px;
+  align-items: center;
+  gap:20px;
+}
+
+.task-list-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  width: fit-content;
 }
 
 .task-card-list {
@@ -86,4 +91,10 @@ flex-direction: row;
 
 .task-card-display-list:hover {
   background:#e1e1e1;
+}
+
+.view-toggle{
+  display: flex;
+  gap: 8px;
+  width:fit-content
 }
