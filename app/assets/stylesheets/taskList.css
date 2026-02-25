@@ -1,8 +1,14 @@
 .task-card-grid {
-  border: 5px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 5px;
   padding: 0px 60px 6vh 60px;
   margin-bottom: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.task-card-grid:hover {
+  box-shadow: 5px 5px 0px #000;
+  transform: translate(-5px, -5px);
 }
 
 .tasks-header {
@@ -45,6 +51,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  gap: 20px;
 }
 
 @media (min-width: 768px) {
