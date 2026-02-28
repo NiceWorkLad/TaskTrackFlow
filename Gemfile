@@ -66,5 +66,5 @@ end
 gem "devise"
 
 # Markdown rendering and sanitization
-gem "commonmarker", "~> 0.30.0"
-gem "sanitize", "~> 6.0.0"
+gem "commonmarker"
+gem "sanitize"
