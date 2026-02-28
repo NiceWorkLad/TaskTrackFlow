@@ -62,4 +62,9 @@ group :test do
   gem "selenium-webdriver"
 end
 
+# Authentication and user management
 gem "devise"
+
+# Markdown rendering and sanitization
+gem "commonmarker", "~> 0.30.0"
+gem "sanitize", "~> 6.0.0"
