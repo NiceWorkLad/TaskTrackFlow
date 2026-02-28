@@ -1,8 +1,10 @@
-<h1><%= @task.title %></h1>
-<p><%= simple_format(@task.description) %></p>
-<h6><%= @task.status %></h6>
 <%= link_to 'Back', request.referer || root_path %>
 <%= link_to 'Edit Task', edit_task_path(@task) %>
 <%= link_to "Delete Task",task_path(@task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 
-<%= debug @task %>
+<h1><%= @task.title %></h1>
+<p><%= simple_format(@task.description) %></p>
+<div class="markdown-preview">
+  <%= raw MarkdownRenderer.render(@task.body) %>
+</div>
+<h6><%= @task.status %></h6>

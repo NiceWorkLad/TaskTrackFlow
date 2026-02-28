@@ -55,7 +55,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :description, :status, :public)
+    params.require(:task).permit(:title, :description, :status, :public, :body, :due_date, :completed)
   end
 
   def set_view_mode
