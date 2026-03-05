@@ -4,7 +4,12 @@
 
 <h1><%= @task.title %></h1>
 <p><%= simple_format(@task.description) %></p>
-<div class="markdown-preview">
-  <%= raw MarkdownRenderer.render(@task.body) %>
-</div>
+<% if @task.body.present? %>
+  <div class="markdown-explain">
+      <a href="https://www.markdownguide.org/getting-started/">?</a>
+    </div>
+  <div class="markdown-preview">
+    <%= raw MarkdownRenderer.render(@task.body) %>
+  </div>
+<% end %>
 <h6><%= @task.status %></h6>
