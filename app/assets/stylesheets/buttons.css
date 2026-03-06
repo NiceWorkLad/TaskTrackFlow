@@ -1,0 +1,174 @@
+.base-btn-1 {
+    position: relative;
+    padding: 0.75rem 2.4rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #111;
+    background: transparent;
+    border: 1.5px solid #111;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.35s ease;
+  }
+  .base-btn-1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #111;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 0;
+  }
+  .btn-1 span { position: relative; z-index: 1; }
+  .btn-1:hover { color: #f5f5f0; }
+  .btn-1:hover::before { transform: scaleX(1); }
+
+  /* ─── BUTTON 2 — Double border pulse ─── */
+  .base-btn-2 {
+    margin: 10px;
+    position: relative;
+    padding: 0.75rem 2.4rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    letter-spacing: 0.04em;
+    color: #111;
+    background: transparent;
+    border: 1.5px solid #111;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 3px 3px 0 #111;
+    transition: box-shadow 0.1s ease, transform 0.1s ease;
+  }
+  .base-btn-2:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 #111;
+  }
+  .base-btn-2:active {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 #111;
+  }
+
+  /* ─── BUTTON 3 — Corner tick crawl ─── */
+  .base-btn-3 {
+    position: relative;
+    padding: 0.75rem 2.4rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #111;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .base-btn-3::before,
+  .base-btn-3::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+  .base-btn-3::before {
+    top: 0; left: 0;
+    border-top: 1.5px solid #111;
+    border-left: 1.5px solid #111;
+  }
+  .base-btn-3::after {
+    bottom: 0; right: 0;
+    border-bottom: 1.5px solid #111;
+    border-right: 1.5px solid #111;
+  }
+  /* Extra corners via inner spans */
+  .base-btn-3 .c-tr, .base-btn-3 .c-bl {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+  .base-btn-3 .c-tr { top: 0; right: 0; border-top: 1.5px solid #111; border-right: 1.5px solid #111; }
+  .base-btn-3 .c-bl { bottom: 0; left: 0; border-bottom: 1.5px solid #111; border-left: 1.5px solid #111; }
+  .base-btn-3:hover::before,
+  .base-btn-3:hover::after,
+  .base-btn-3:hover .c-tr,
+  .base-btn-3:hover .c-bl {
+    width: 100%; height: 100%;
+  }
+
+  /* ─── BUTTON 4 — Glitch flicker ─── */
+  .base-btn-4 {
+    position: relative;
+    padding: 0.75rem 2.4rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #111;
+    background: #111;
+    color: #f5f5f0;
+    border: 1.5px solid #111;
+    cursor: pointer;
+  }
+  .base-btn-4::before {
+    content: attr(data-label);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f0;
+    color: #111;
+    clip-path: inset(100% 0 0 0);
+    transition: none;
+  }
+  .base-btn-4:hover::before {
+    animation: glitch-reveal 0.4s steps(1) forwards;
+  }
+  @keyframes glitch-reveal {
+    0%   { clip-path: inset(80% 0 0 0); }
+    20%  { clip-path: inset(20% 0 60% 0); }
+    40%  { clip-path: inset(55% 0 10% 0); }
+    60%  { clip-path: inset(10% 0 45% 0); }
+    80%  { clip-path: inset(40% 0 20% 0); }
+    100% { clip-path: inset(0% 0 0 0); }
+  }
+
+  /* ─── BUTTON 5 — Underline scan ─── */
+  .base-btn-5 {
+    position: relative;
+    padding: 0.75rem 2.4rem;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    color: #111;
+    background: transparent;
+    border: 1.5px solid #111;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .base-btn-5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    background: #111;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  .base-btn-5 .scan {
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0,0,0,0.04) 3px,
+      rgba(0,0,0,0.04) 4px
+    );
+    transition: left 0.4s ease;
+  }
+  .base-btn-5:hover .scan { left: 0; }
+  .base-btn-5:hover::after { transform: scaleX(1); }
