@@ -3,17 +3,16 @@ class TasksController < ApplicationController
   before_action :set_view_mode, only: [:index, :public_index]
 
   def index
-        @tasks = current_user.tasks.order(due_date: :asc)
-
+    @tasks = current_user.tasks
+    @tasks = @tasks.search(params[:query]) if params[:query].present?
+    @tasks = @tasks.order(due_date: :asc)
     @user = current_user
-
-    if @user
-      @tasks = @user.tasks
-    end
   end
 
   def public_index
     @tasks = Task.where(public: true)
+    @tasks = @tasks.search(params[:query]) if params[:query].present?
+    @tasks = @tasks.order(due_date: :asc)
   end
 
   def show
