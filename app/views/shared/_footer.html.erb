@@ -1,0 +1,17 @@
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-copyright">
+      &copy; <%= Time.current.year %> Task Tracker. Built with Rails.
+    </div>
+    <ul class="footer-links">
+      <li><%= link_to "Public Tasks", public_tasks_path %></li>
+      <li><%= link_to "Docs", pages_docs_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "My Tasks", tasks_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %></li>
+      <% else %>
+        <li><%= link_to "Login", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</footer>
