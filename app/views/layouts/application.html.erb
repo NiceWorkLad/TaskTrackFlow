@@ -32,22 +32,15 @@
   <body>
     <%= render "shared/navbar" %>
 
-    <% if notice %>￼Search
-Write documentation
-Created 3 days ago Last updated 3 days ago Due in 3 days
-Document API endpoints and usage
-
-pending
-
-Edit
-
+    <% if notice %>
       <p class="notice"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert"><%= alert %></p>
     <% end %>
+
     <div class="container">
-    <%= yield %>
+      <%= yield %>
     </div>
 
     <%= render "shared/footer" %>

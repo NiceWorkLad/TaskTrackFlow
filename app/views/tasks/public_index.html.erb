@@ -2,21 +2,22 @@
   <h1 class="task-list-title">Public List</h1>
   <%= render "search" %>
   <nav class="view-toggle">
-  <%= link_to url_for(params.permit!.merge(view: "grid")),
-        data: { turbo_frame: "tasks_view" },
-        class: ("active" if @view_mode == "grid") do %>
-    <svg><%= render "shared/icons/grid" %></svg>
-  <% end %>
+    <%= link_to url_for(params.permit!.merge(view: "grid")),
+          data: { turbo_frame: "tasks_view" },
+          class: ("active" if @view_mode == "grid") do %>
+      <svg><%= render "shared/icons/grid" %></svg>
+    <% end %>
 
-  <%= link_to url_for(params.permit!.merge(view: "list")),
-        data: { turbo_frame: "tasks_view" },
-        class: ("active" if @view_mode == "list") do %>
-    <svg><%= render "shared/icons/list" %></svg>
-  <% end %>
-</nav>
+    <%= link_to url_for(params.permit!.merge(view: "list")),
+          data: { turbo_frame: "tasks_view" },
+          class: ("active" if @view_mode == "list") do %>
+      <svg><%= render "shared/icons/list" %></svg>
+    <% end %>
+  </nav>
 </div>
 
-
-<section class="tasks-index tasks-index--<%= @view_mode %>">
-  <%= render "tasks/#{@view_mode}", tasks: @tasks %>
-</section>
+<%= turbo_frame_tag "tasks_view" do %>
+  <section class="tasks-index tasks-index--<%= @view_mode %>">
+    <%= render "tasks/#{@view_mode}", tasks: @tasks %>
+  </section>
+<% end %>
