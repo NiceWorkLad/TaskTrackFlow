@@ -16,7 +16,8 @@
 </nav>
 </div>
 
-  <%# Index layout renderer %>
-<section class="tasks-index tasks-index--<%= @view_mode %>">
-  <%= render "tasks/#{@view_mode}", tasks: @tasks %>
-</section>
+<%= turbo_frame_tag "tasks_view" do %>
+  <section class="tasks-index tasks-index--<%= @view_mode %>">
+    <%= render "tasks/#{@view_mode}", tasks: @tasks %>
+  </section>
+<% end %>
