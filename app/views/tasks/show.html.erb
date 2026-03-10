@@ -6,7 +6,7 @@
 <p><%= simple_format(@task.description) %></p>
 <% if @task.body.present? %>
   <div class="markdown-explain">
-      <a href="https://www.markdownguide.org/getting-started/">?</a>
+      <a href="https://www.markdownguide.org/basic-syntax/">?</a>
     </div>
   <div class="markdown-preview">
     <%= raw MarkdownRenderer.render(@task.body) %>

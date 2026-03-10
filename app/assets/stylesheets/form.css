@@ -1,0 +1,110 @@
+.base-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #fff;
+  border: 3px solid #111;
+  box-shadow: 8px 8px 0 #111;
+}
+
+.form-title {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111;
+  border-bottom: 3px solid #646464;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.form-input, 
+.form-textarea, 
+.form-select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-family: "DM Serif Text", serif;
+  font-size: 1rem;
+  border: 2px solid #111;
+  background: #fdfdfd;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus, 
+.form-textarea:focus, 
+.form-select:focus {
+  background: #fff;
+  box-shadow: 4px 4px 0 #111;
+  transform: translate(-2px, -2px);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.form-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #111;
+  cursor: pointer;
+  accent-color: #111;
+}
+
+.form-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Error messages styling */
+#error_explanation {
+  background: #fff;
+  border: 2px solid #d9534f;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 4px 4px 0 #d9534f;
+}
+
+#error_explanation h2 {
+  font-size: 1.2rem;
+  color: #d9534f;
+  margin-top: 0;
+}
+
+#error_explanation ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #d9534f;
+}
+
+@media (max-width: 768px) {
+  .base-form {
+    padding: 1.5rem;
+    box-shadow: 4px 4px 0 #111;
+  }
+}

@@ -1,8 +1,8 @@
 <div class="search-container">
   <%= form_with url: request.path, method: :get, class: "search-form", data: { turbo_frame: "tasks_view", turbo_action: "advance" } do |f| %>
     <div class="search-input-group">
-      <%= f.text_field :query, value: params[:query], placeholder: "Search tasks...", class: "search-input" %>
-      <button type="submit" class="base-btn-2">
+      <%= f.text_field :query, value: params[:query], placeholder: "Search tasks...", class: "form-input", style: "margin: 0" %>
+      <button type="submit" class="base-btn-2" style="margin: 0">
         Search
       </button>
       <% if params[:query].present? %>
