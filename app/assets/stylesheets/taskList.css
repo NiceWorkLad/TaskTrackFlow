@@ -4,6 +4,7 @@
   padding: 0px 60px 6vh 60px;
   margin-bottom: 10px;
   transition: all 0.2s ease-in-out;
+  background-color: #fff;
 }
 
 .task-card-grid:hover {
