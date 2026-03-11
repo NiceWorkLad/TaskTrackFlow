@@ -87,7 +87,6 @@
 .task-card-list {
   border: 5px solid #ccc;
   border-radius: 5px;
-  width: 100%;
   padding: 0px 20px 0px 20px;
   margin-bottom: 20px;
 }
@@ -97,6 +96,7 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0 30px;
 }
 
 .task-display-grid{
@@ -154,11 +154,20 @@
   width: 100%;
   background:#fff;
   border:solid 1px #ddd;
-  padding:0 30px;
+  p {
+    margin: 0;
+  }
 }
 
 .task-card-display-list:hover {
   background:#e1e1e1;
+}
+
+.task-card-display-list-info {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
 }
 
 .view-toggle{
