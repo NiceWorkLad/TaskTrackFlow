@@ -68,3 +68,5 @@ gem "devise"
 # Markdown rendering and sanitization
 gem "commonmarker"
 gem "sanitize"
+
+gem "pg"
