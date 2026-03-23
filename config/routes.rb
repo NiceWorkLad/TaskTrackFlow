@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "pages/docs"
+  get "pages/dev"
   devise_for :users, controllers: {
         sessions: "users/sessions"
       }
