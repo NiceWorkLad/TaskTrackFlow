@@ -1,0 +1,51 @@
+<% if user_signed_in? %>
+  <% user = current_user %>
+  <% registration_fields = {
+    "User ID" => :id,
+    "First name" => :first_name,
+    "Last name" => :last_name,
+    "Username" => :username,
+    "Email" => :email,
+    "Pending email change" => :unconfirmed_email,
+    "Account created" => :created_at,
+    "Last updated" => :updated_at,
+    "Sign in count" => :sign_in_count,
+    "Current sign in" => :current_sign_in_at,
+    "Last sign in" => :last_sign_in_at,
+    "Current sign in IP" => :current_sign_in_ip,
+    "Last sign in IP" => :last_sign_in_ip,
+    "Email confirmed at" => :confirmed_at,
+    "Number of tasks" => ->(u) { Task.where(user_id: u.id).count }
+  } %>
+
+<div class="base-form">
+  <h1>My Profile</h1>
+
+  <table>
+    <tbody>
+      <% registration_fields.each do |label, field| %>
+        <% value = field.respond_to?(:call) ? field.call(user) : (user.respond_to?(field) ? user.public_send(field) : nil) %>
+        <% next if value.blank? %>
+
+        <tr>
+          <th style="text-align: left; padding-right: 1rem;"><%= label %>:</th>
+          <td><%= value.is_a?(Time) || value.is_a?(DateTime) ? l(value, format: :long) : value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h2>Email Settings</h2>
+  <p>Need to change your email address?</p>
+  <%= link_to "Change Email", edit_user_registration_path, class: "btn base-btn-1" %>
+<% else %>
+  <h1>Profile</h1>
+  <p>You must be signed in to view this page.</p>
+  <%= link_to "Sign In", new_user_session_path %>
+<% end %>
+
+<%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link base-btn-1" %>
+
+</div>

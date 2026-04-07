@@ -1,3 +1,4 @@
+<div class="wide-base-form">
 <%= link_to 'Back', request.referer || root_path %>
 <% if current_user == @task.user %>
   <%= link_to 'Edit', edit_task_path(@task) %>
@@ -15,3 +16,4 @@
   </div>
 <% end %>
 <h6><%= @task.status %></h6>
+</div>
