@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!, except: [:public_index, :show]
-  before_action :set_view_mode, only: [:index, :public_index]
+  before_action :authenticate_user!, except: [ :public_index, :show ]
+  before_action :set_view_mode, only: [ :index, :public_index ]
 
   def index
     @tasks = current_user.tasks
