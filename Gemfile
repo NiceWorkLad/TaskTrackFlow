@@ -49,6 +49,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Use RSpec for testing [
+  gem "rspec-rails", "~> 7.0.1"
 end
 
 group :development do
@@ -68,3 +71,5 @@ gem "devise"
 # Markdown rendering and sanitization
 gem "commonmarker"
 gem "sanitize"
+
+gem "pg"

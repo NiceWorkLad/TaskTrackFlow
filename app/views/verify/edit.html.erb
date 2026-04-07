@@ -1,0 +1,30 @@
+<div class="base-form">
+  <h1 class="form-title">Verify Your Email</h1>
+  <p>Enter the verification code sent to your email:</p>
+
+  <%= form_with model: @user, url: verify_path, method: :put, data: { turbo: false } do |f| %>
+    <div data-controller="verify" class="form-group code-inputs">
+      <% 4.times do |i| %>
+        <%= f.text_field "pin_#{i}",
+          maxlength: 1,
+          autofocus: (i == 0),
+          autocomplete: "off",
+          placeholder: "",
+          class: "code-input",
+          data: { verify_target: "codeInput" } %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <p>Didn't receive the code?</p>
+
+  <%= form_with model: @user, url: resend_verify_path, method: :post do |f| %>
+    <% if @user.errors.any? %>
+      <%= @user.errors.full_messages.to_sentence.capitalize %>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.submit "Resend code" %>
+    </div>
+  <% end %>
+</div>
