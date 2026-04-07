@@ -7,6 +7,14 @@
   box-shadow: 8px 8px 0 #111;
 }
 
+.wide-base-form {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #fff;
+  border: 3px solid #111;
+  box-shadow: 8px 8px 0 #111;
+}
 .form-title {
   display: block;
   width: fit-content;
@@ -31,8 +39,8 @@
   color: #111;
 }
 
-.form-input, 
-.form-textarea, 
+.form-input,
+.form-textarea,
 .form-select {
   width: 100%;
   padding: 0.8rem 1rem;
@@ -45,8 +53,8 @@
   box-sizing: border-box;
 }
 
-.form-input:focus, 
-.form-textarea:focus, 
+.form-input:focus,
+.form-textarea:focus,
 .form-select:focus {
   background: #fff;
   box-shadow: 4px 4px 0 #111;
