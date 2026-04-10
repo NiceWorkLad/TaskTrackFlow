@@ -10,7 +10,9 @@ class User < ApplicationRecord
 
   after_create :send_pin!
 
-  private
+  def send_pin!
+    SendPinJob.perform_later(id)
+  end
 
   def reset_pin!
     update_columns(pin: rand(1000..9999), pin_sent_at: Time.current)
@@ -18,17 +20,5 @@ class User < ApplicationRecord
 
   def unverify!
     update_column(:email_verified, false)
-  end
-
-  def send_pin!
-    reset_pin!
-    unverify!
-    SendPinJob.perform_later(id)
-  end
-
-  public
-
-  def deliver_pin!
-    send_pin!
   end
 end
