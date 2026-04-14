@@ -10,3 +10,19 @@ production:
 
   cable:
     url: <%= ENV["DATABASE_URL"] %>
+
+development:
+
+  adapter: postgresql
+  database: task_tracker_development
+  primary:
+    url: <%= ENV["DATABASE_URL"] %>
+
+  cache:
+    url: <%= ENV["DATABASE_URL"] %>
+
+  queue:
+    url: <%= ENV["DATABASE_URL"] %>
+
+  cable:
+    url: <%= ENV["DATABASE_URL"] %>
