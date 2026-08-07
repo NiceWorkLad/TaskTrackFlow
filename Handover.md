@@ -1,6 +1,8 @@
 # TaskTracker Repository Handover Sheet
 
 ## Current Work in Progress
+- Kamal Self Host Ready
+- Emails
 - 
 
 ## Known Issues
