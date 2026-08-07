@@ -22,7 +22,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_04_01_145222) do
     t.date "due_date"
     t.string "status", default: "pending"
     t.text "body"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
