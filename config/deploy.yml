@@ -2,7 +2,7 @@
 service: task_tracker
 
 # Name of the container image.
-image: ghcr.io/niceworklad/task_tracker
+image: niceworklad/task_tracker
 
 # Deploy to these servers.
 servers:
