@@ -5,7 +5,7 @@
 - 
 
 # Marco Work in Pregress
-- Check Server is clear for hosting (figure out the nginx stuff for that)
+- Fix the held up at Kamal setup
 - Remove the block for non verified users for now (until we get emails working)
 - look into emails for self hosting
 
