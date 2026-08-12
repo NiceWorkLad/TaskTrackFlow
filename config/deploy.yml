@@ -95,8 +95,6 @@ ssh:
   keys:
     - ~/.ssh/id_ed25519_repos
 
-
-
 # Use accessory services (secrets come from .kamal/secrets).
 # accessories:
 #   db:
