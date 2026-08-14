@@ -1,5 +1,5 @@
 class VerifyController < ApplicationController
-  skip_before_action :redirect_if_unverified
+  # skip_before_action :redirect_if_unverified
   def new
     @user = current_user
   end
