@@ -4,13 +4,13 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery
-  before_action :redirect_if_unverified
+  # before_action :redirect_if_unverified
 
-  def redirect_if_unverified
-    if current_user && !current_user.email_verified?
-      redirect_to new_verify_path, alert: "Please verify your email address to continue."
-    end
-  end
+  # def redirect_if_unverified
+  #   if current_user && !current_user.email_verified?
+  #     redirect_to new_verify_path, alert: "Please verify your email address to continue."
+  #   end
+  # end
 
   protected
 
