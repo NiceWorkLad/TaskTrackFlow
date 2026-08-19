@@ -1,13 +1,16 @@
 # TaskTracker Repository Handover Sheet
 
 ## Current Work in Progress
-- Kamal Self Host Ready
+- CSS crackdown
 - 
 
 # Marco Work in Pregress
-- Fix the held up at Kamal setup
-- Remove the block for non verified users for now (until we get emails working)
-- look into emails for self hosting
+
+- Get a solid Button libary create a full list of the buttons needed
+- Get a better collection of shades for the site like around 8-10 greys
+- Better formatting for the site
+- Add a colour picker to give tasks a standout look (in the form of a inside border)
+- Needs some planning
 
 ## Known Issues
 - 
@@ -22,3 +25,7 @@
 ## Contact & Support
 
 ## Additional Notes
+
+
+
+
