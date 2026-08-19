@@ -133,7 +133,6 @@
     100% { clip-path: inset(0% 0 0 0); }
   }
 
-  /* ─── BUTTON 5 — Underline scan ─── */
   .base-btn-5 {
     position: relative;
     padding: 0.75rem 2.4rem;
@@ -172,3 +171,90 @@
   }
   .base-btn-5:hover .scan { left: 0; }
   .base-btn-5:hover::after { transform: scaleX(1); }
+
+.btn-edit,
+.btn-back,
+.btn-delete {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: #4a90e2;
+  color: #fff;
+}
+.btn-edit:hover {
+  background-color: #357abd;
+}
+
+.btn-back {
+  background-color: #e0e0e0;
+  color: #333;
+}
+.btn-back:hover {
+  background-color: #cfcfcf;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: #fff;
+}
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+.btn-dots {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #111;
+  color: transparent;
+  overflow: visible;
+  box-shadow: 0 -12px 0 #111, 0 12px 0 #111;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.btn-update {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #f0ad4e;
+  color: #fff;
+}
+
+.btn-update:hover {
+  background-color: #ec971f;
+}
+
+.btn-cancel {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background-color: #5a6268;
+}

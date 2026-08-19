@@ -1,16 +1,13 @@
 <div class="wide-base-form">
-<%= link_to 'Back', request.referer || root_path %>
-<% if current_user == @task.user %>
-  <%= link_to 'Edit', edit_task_path(@task) %>
-  <%= link_to "Delete",task_path(@task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-<% end %>
-
-<h1><%= @task.title %></h1>
-<p><%= simple_format(@task.description) %></p>
-<% if @task.body.present? %>
+  <h1><%= @task.title %></h1>
+  <p><%= simple_format(@task.description) %></p>
+  <% if @task.body.present? %>
   <div class="markdown-preview">
     <%= raw MarkdownRenderer.render(@task.body) %>
   </div>
-<% end %>
-<h6><%= @task.status %></h6>
+  <% end %>
+  <h6><%= @task.status %></h6>
+  <% if current_user == @task.user %>
+    <%= link_to 'Edit', edit_task_path(@task), class: 'btn-edit' %>
+  <% end %>
 </div>
