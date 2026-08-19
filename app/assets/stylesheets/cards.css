@@ -1,0 +1,36 @@
+.card--user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: #f8f9fa;
+  border: 2px solid #111;
+  border-radius: 12px;
+  text-decoration: none !important;
+  color: #111 !important;
+  transition: all 0.2s ease;
+  box-shadow: 4px 4px 0 #111;
+  min-width: 200px;
+}
+
+.card--user:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #111;
+}
+
+.card--profile {
+}
+
+.card--show {
+}
+
+.card--index-compact {
+}
+
+.card--index-expanded { 
+}
+
+.card--notification{
+}
+
+
