@@ -20,15 +20,16 @@
     <%= form.text_field:description, class: "form-input", placeholder: "A little about the task" %>
   </div>
 
+
   <div class="form-group">
     <%= form.label :body, "Text Body", class: "form-label" %>
     <%# <div class="markdown-explain">
       <a href="https://www.markdownguide.org/basic-syntax/">Learn About Markdown</a>
    </div> %>
-    <%= form.text_area :body, class: "form-textarea", placeholder: "Use Markdown to Create you Body" %>
+    <%= form.text_area :body, class: "form-textarea", placeholder: "User Markdown to Create your Body",
+      data: { controller: "auto-grow", action: "input->auto-grow#resize" } %>
   </div>
   
-
   <div class="form-group">
     <%= form.label :due_date, class: "form-label" %>
     <%= form.date_field :due_date, class: "form-input" %>
