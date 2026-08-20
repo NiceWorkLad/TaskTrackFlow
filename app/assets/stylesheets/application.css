@@ -9,90 +9,11 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
-@import url("navbar.css");
-@import url("taskList.css");
-@import url("footer.css");
-@import url("form.css");
-@import url("alerts.css");
-@import url("cards.css");
-
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #f0f0f0;
-}
-
-
-.notice {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-  padding: 12px 20px;
-  margin: 16px 0;
-  border-radius: 4px;
-}
-
-.alert {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  padding: 12px 20px;
-  margin: 16px 0;
-  border-radius: 4px;
-}
-
-.container {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .container {
-    width:90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 10px;
-  }
-
-  .notice,
-  .alert {
-    padding: 10px 15px;
-    margin: 12px 0;
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1025px) {
-  .container {
-    max-width: 1200px;
-  }
-}
-
-@media (min-width: 1441px) {
-  .container {
-    max-width: 1400px;
-  }
-}
-
-svg {
-  vertical-align: middle;
-  width:30px;
-  height:30px;
-}
-
-svg:hover {
-  color:green
-}
+@import url('base.css');
+@import url("components/navbar.css"); 
+@import url("components/taskList.css");
+@import url("components/footer.css");
+@import url("components/form.css");
+@import url("components/alerts.css");
+@import url("components/cards.css");
+@import url("pages/show.css");

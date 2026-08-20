@@ -1,8 +1,8 @@
-<div class="wide-base-form">
-  <h1><%= @task.title %></h1>
-  <p><%= simple_format(@task.description) %></p>
+<div class="page-show">
+  <h1 class="page-show-title"><%= @task.title %></h1>
+  <p class="page-show-description"><%= @task.description %></p>
   <% if @task.body.present? %>
-  <div class="markdown-preview">
+  <div class="page-show-markdown-preview">
     <%= raw MarkdownRenderer.render(@task.body) %>
   </div>
   <% end %>

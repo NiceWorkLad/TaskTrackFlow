@@ -1,0 +1,39 @@
+.page-show {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.page-show-description {
+    font-size:25px;
+}
+
+.page-show-title {}
+
+.page-show-title h1,
+.page-show-title h2,
+.page-show-title h3 {
+	margin: 0 0 12px;
+	font-weight: 600;
+}
+
+.page-show-markdown-preview {
+	text-align: left;
+	line-height: 1.6;
+	max-width: 900px;
+	margin: 24px auto 0;
+	padding: 24px;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.page-show-markdown-preview p {
+	margin: 0 0 16px;
+}
+
+.page-show-markdown-preview code {
+	padding: 2px 6px;
+	border-radius: 4px;
+	background: #f3f4f6;
+}
