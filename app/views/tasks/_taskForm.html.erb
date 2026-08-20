@@ -45,6 +45,7 @@
   </div>
 
   <div class="form-actions">
+    
     <%= link_to 'Cancel', tasks_path, class: "btn-cancel", style: "text-decoration: none" %>
   </div>
 
@@ -55,8 +56,7 @@
     <div class="form-actions">
       <%= link_to "Delete",task_path(@task), class: 'btn-delete' , data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     </div>
-
-    
-
+    <% else %>
+    <%= form.submit 'Create', class: 'btn-update' %>
   <% end %>
 <% end %>
