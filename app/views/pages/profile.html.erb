@@ -36,16 +36,34 @@
   </table>
 
   <hr>
+  <h2>User Settings</h2>
+  <div class="username-settings">
+    <h3>Change Username</h3>
+    <%= form_with(model: user, local: true) do |form| %>
+      <div class="field">
+        <%= form.label :username %>
+        <%= form.text_field :username, value: user.username, class: "form-control" %>
+      </div>
+      <div class="actions">
+        <%= form.submit "Update Username", class: "btn base-btn-1" %>
+      </div>
+    <% end %>
+  </div>
 
   <h2>Email Settings</h2>
   <p>Need to change your email address?</p>
   <%= link_to "Change Email", edit_user_registration_path, class: "btn base-btn-1" %>
+
+<%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link base-btn-1" %>
+
+
+<h3>Cancel my account</h3>
+
+<div>Unhappy With Your account?<%= button_to "Cancel my account", registration_path(user), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+
 <% else %>
   <h1>Profile</h1>
   <p>You must be signed in to view this page.</p>
   <%= link_to "Sign In", new_user_session_path %>
 <% end %>
-
-<%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link base-btn-1" %>
-
 </div>
