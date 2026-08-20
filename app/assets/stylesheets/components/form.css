@@ -75,10 +75,6 @@
 
 .form-textarea {
   min-height: 120px;
-  /* make textarea size to its content (CSS-only best-effort)
-     height:auto and overflow:hidden prevent scrollbars; disable
-     manual resize to allow content-driven sizing. For perfect
-     autosizing use a small JS helper to set height = scrollHeight. */
   overflow: hidden;
   resize: none;
 }
