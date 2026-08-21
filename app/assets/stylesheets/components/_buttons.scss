@@ -1,3 +1,16 @@
+
+$btn-size-sm-padding: 6px 12px;
+$btn-size-sm-font-size: 12px;
+
+$btn-size-md-padding: 8px 16px;
+$btn-size-md-font-size: 14px;
+
+$btn-size-lg-padding: 12px 24px;
+$btn-size-lg-font-size: 16px;
+
+$btn-size-xl-padding: 16px 32px;
+$btn-size-xl-font-size: 18px;
+
 .base-btn-1 {
     position: relative;
     padding: 0.75rem 2.4rem;
@@ -21,11 +34,10 @@
     transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 0;
   }
-  .btn-1 span { position: relative; z-index: 1; }
-  .btn-1:hover { color: #f5f5f0; }
-  .btn-1:hover::before { transform: scaleX(1); }
+  .base-btn-1 span { position: relative; z-index: 1; }
+  .base-btn-1:hover { color: #f5f5f0; }
+  .base-btn-1:hover::before { transform: scaleX(1); }
 
-  /* ─── BUTTON 2 — Double border pulse ─── */
   .base-btn-2 {
     margin: 10px;
     position: relative;
@@ -50,7 +62,6 @@
     box-shadow: 0 0 0 #111;
   }
 
-  /* ─── BUTTON 3 — Corner tick crawl ─── */
   .base-btn-3 {
     position: relative;
     padding: 0.75rem 2.4rem;
@@ -80,7 +91,6 @@
     border-bottom: 1.5px solid #111;
     border-right: 1.5px solid #111;
   }
-  /* Extra corners via inner spans */
   .base-btn-3 .c-tr, .base-btn-3 .c-bl {
     position: absolute;
     width: 12px;
@@ -177,7 +187,7 @@
   .btn-cancel,
   .btn-update{
   display: inline-block;
-  padding: 3px 5px;
+  padding: $btn-size-sm-padding;
   border-radius: 2px;
   border: none;
   font-size: 20px;
