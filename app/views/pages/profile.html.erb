@@ -39,7 +39,7 @@
   <h2>User Settings</h2>
   <div class="username-settings">
     <h3>Change Username</h3>
-    <%= form_with(model: user, local: true) do |form| %>
+    <%= form_with(model: user, url: settings_username_path, method: :patch, local: true) do |form| %>
       <div class="field">
         <%= form.label :username %>
         <%= form.text_field :username, value: user.username, class: "form-control" %>

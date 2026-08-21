@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [ :show, :index ]
 
+  patch "/settings/username", to: "settings#update_username", as: :settings_username
+
   root to: "tasks#public_index"
 
   get "/verify" => "verify#edit", :as => "verify"
