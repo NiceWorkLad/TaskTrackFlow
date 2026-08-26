@@ -1,16 +1,16 @@
 # TaskTracker Repository Handover Sheet
 
-## Today's Work
+## Quick Job Tickets
 - Add a proper Theme (8-10 greys with scss)
-- Make Usernames Appear on Tasks
-- Show Username instead of Email when logged in
+- create some better simple buttons using scss for default sizes and panels
 - Make Usernames Unique but can be changed whenever
 - Profile Card should act as the btn, not just the actual link
 -Tasks need to at least have a title and desciption. 
 
 # Marco Work in Pregress
-- Give Users a username option, with the option to change it at any point
-- Fix Profile Card for both loggde in and logged out
+- Fix Task card size for grid so it's the same height or at least takes up the same space with different content
+- Make the new task button on the same panel as the task row and task grid select
+- Fix Profile Card for both logged in and logged out
 - Get a solid Button libary create a full list of the buttons needed
 - Get a better collection of shades for the site like around 8-10 greys
 - Better formatting for the site
@@ -21,9 +21,9 @@
 -EMAIL NOT WORKING
 -Tasks can have blank titles
 
-
 ## Recent Changes
-- 
+- Usernames Added
+- New route for just changing username
 
 ## Next Steps / TODOs
 - [Better Search Options] 
@@ -35,10 +35,9 @@
 
 ## Additional Notes
 
+## SCSS running 
 for the SCSS you need to have
     ZSH> bin/rails dartsass:watch
     ZSH> bin/rails server
 
-so it properly updates the scss changes be recompiling
-
-
+so it properly recompiles upon changes

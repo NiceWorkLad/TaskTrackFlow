@@ -7,7 +7,7 @@ image: niceworklad/task_tracker
 # Deploy to these servers.
 servers:
   web:
-    - louislab.duckdns.org
+    - 90.214.90.131
   # job:
   #   hosts:
   #     - 192.168.0.1
