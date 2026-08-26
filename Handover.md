@@ -1,6 +1,7 @@
 # TaskTracker Repository Handover Sheet
 
 ## Quick Job Tickets
+- Get the www. redirecting
 - Add a proper Theme (8-10 greys with scss)
 - create some better simple buttons using scss for default sizes and panels
 - Make Usernames Unique but can be changed whenever
