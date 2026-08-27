@@ -1,6 +1,15 @@
 # TaskTracker Repository Handover Sheet
 
+## For Next Time
+
+- Verify Resend domain - make sure contact.tasktrackflow.com shows as verified.
+- Finish Rails mailer setup - use TaskTracker noreply@contact.tasktrackflow.com as the sender and Resend SMTP in production.rb.
+- Confirm credentials locally - run bin/rails credentials:show and verify the Resend key is present.
+- Configure Kamal secrets - securely provide the new RAILS_MASTER_KEY to the production container. Don't commit config/master.key.
+- Deploy and test production email - run kamal deploy, confirm Rails can decrypt credentials, then send a real welcome_email from production.
+
 ## Quick Job Tickets
+
 - Get the www. redirecting
 - Add a proper Theme (8-10 greys with scss)
 - create some better simple buttons using scss for default sizes and panels
