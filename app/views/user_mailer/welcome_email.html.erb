@@ -1,7 +1,7 @@
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
   <h1>Welcome to TaskTracker!</h1>
 
-  <p>Hi <%= @user.email %>,</p>
+  <p>Hi <%= @user.username.presence || @user.email %>,</p>
 
   <p>Thank you for signing up. We're excited to have you on board!</p>
 

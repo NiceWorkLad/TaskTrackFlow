@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "TaskTracker <noreply@contact.tasktrackflow.com>"
   layout "mailer"
 end
