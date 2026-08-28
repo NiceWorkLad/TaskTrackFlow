@@ -95,7 +95,7 @@ builder:
 ssh:
   user: niceworklad
   keys:
-    - ~/.ssh/id_ed25519_repos
+    - ~/.ssh/id_ed25519_kamal
 
 # Use accessory services (secrets come from .kamal/secrets).
 # accessories:
