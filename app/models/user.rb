@@ -12,14 +12,6 @@ class User < ApplicationRecord
 
   private
 
-  def reset_pin!
-    update_columns(pin: rand(1000..9999), pin_sent_at: Time.current)
-  end
-
-  def unverify!
-    update_column(:email_verified, false)
-  end
-
   def send_pin!
     SendPinJob.perform_later(id)
   end
