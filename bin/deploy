@@ -2,4 +2,5 @@
 set -a
 source .env
 set +a
-kamal deploy
+
+bin/kamal deploy
