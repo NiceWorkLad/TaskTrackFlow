@@ -8,9 +8,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  after_create :send_pin!
+  after_create :send_welcome_email!
 
   private
+
+  def send_welcome_email!
+    UserMailer.with(user: self).welcome_email.deliver_later
+  end
 
   def send_pin!
     SendPinJob.perform_later(id)
