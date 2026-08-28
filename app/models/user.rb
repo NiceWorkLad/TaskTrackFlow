@@ -21,8 +21,6 @@ class User < ApplicationRecord
   end
 
   def send_pin!
-    reset_pin!
-    unverify!
     SendPinJob.perform_later(id)
   end
 
