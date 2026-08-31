@@ -6,7 +6,7 @@ class VerifyController < ApplicationController
 
   def create
     current_user.deliver_pin!
-    redirect_to new_verify_path, notice: "A new PIN has been sent to your email address."
+    redirect_to verify_path, notice: "A new PIN has been sent to your email address."
   end
 
   def edit
