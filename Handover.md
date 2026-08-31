@@ -2,11 +2,10 @@
 
 ## For Next Time
 
-- Verify Resend domain - make sure contact.tasktrackflow.com shows as verified.
-- Finish Rails mailer setup - use TaskTracker noreply@contact.tasktrackflow.com as the sender and Resend SMTP in production.rb.
-- Confirm credentials locally - run bin/rails credentials:show and verify the Resend key is present.
-- Configure Kamal secrets - securely provide the new RAILS_MASTER_KEY to the production container. Don't commit config/master.key.
-- Deploy and test production email - run kamal deploy, confirm Rails can decrypt credentials, then send a real welcome_email from production.
+- personal Index Page No form without verify
+- New Task Page No form without verify
+- Verify Page need to sendpin job and resend needs to do the same
+
 
 ## Quick Job Tickets
 
@@ -15,7 +14,7 @@
 - create some better simple buttons using scss for default sizes and panels
 - Make Usernames Unique but can be changed whenever
 - Profile Card should act as the btn, not just the actual link
--Tasks need to at least have a title and desciption. 
+- Tasks need to at least have a title and desciption.
 
 # Marco Work in Pregress
 - Fix Task card size for grid so it's the same height or at least takes up the same space with different content
@@ -28,7 +27,7 @@
 - Needs some planning
 
 ## Known Issues
--EMAIL NOT WORKING
+-EMAIL Verify ResendPin NOT WORKING
 -Tasks can have blank titles
 
 ## Recent Changes
