@@ -5,6 +5,7 @@
 - personal Index Page No form without verify
 - New Task Page No form without verify
 - Verify Page need to sendpin job and resend needs to do the same
+- FIx user edit page
 
 
 ## Quick Job Tickets

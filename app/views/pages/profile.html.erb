@@ -51,8 +51,12 @@
   </div>
 
   <h2>Email Settings</h2>
-  <p>Need to change your email address?</p>
-  <%= link_to "Change Email", edit_user_registration_path, class: "btn base-btn-1" %>
+  <% if user.email_verified %>
+    <p> Email Verified </p>
+  <% else %>
+    <h4>Email Not Verified<h4>
+    <%= link_to "Verify Here", verify_path, class:"base-btn-1" %>
+  <% end%>
 
 <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link base-btn-1" %>
 
