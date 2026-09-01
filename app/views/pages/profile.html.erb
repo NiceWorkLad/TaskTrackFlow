@@ -2,18 +2,10 @@
   <% user = current_user %>
   <% registration_fields = {
     "User ID" => :id,
-    "First name" => :first_name,
-    "Last name" => :last_name,
     "Username" => :username,
     "Email" => :email,
     "Pending email change" => :unconfirmed_email,
     "Account created" => :created_at,
-    "Last updated" => :updated_at,
-    "Sign in count" => :sign_in_count,
-    "Current sign in" => :current_sign_in_at,
-    "Last sign in" => :last_sign_in_at,
-    "Current sign in IP" => :current_sign_in_ip,
-    "Last sign in IP" => :last_sign_in_ip,
     "Email confirmed at" => :confirmed_at,
     "Number of tasks" => ->(u) { Task.where(user_id: u.id).count }
   } %>

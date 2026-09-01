@@ -1,3 +1,9 @@
 <h1 class="form-title">New Task</h1>
-
-<%= render "taskForm", task: @task %>
+<% if @user.email_verified %>
+  <%= render "taskForm", task: @task %>
+<% else %>
+  <div class="base-form">
+    <h4>Please verify your email before you can create a task.</h4>
+    <%= link_to "Verify Here", verify_path, class: "base-btn-1" %>
+  </div>
+<% end %>

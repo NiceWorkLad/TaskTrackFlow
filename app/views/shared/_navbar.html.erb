@@ -7,7 +7,9 @@
 
     <% if user_signed_in? %>
       <li><%= link_to "New", new_task_path, class: "nav-link" %></li>
+      <% if current_user.tasks.count > 0 %>
       <li><%= link_to "My Tasks", tasks_path, class: "nav-link" %></li>
+      <% end%>
 
       <li>
         <div class="card--user">
