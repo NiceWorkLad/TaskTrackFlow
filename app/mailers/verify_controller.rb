@@ -17,7 +17,7 @@ class VerifyController < ApplicationController
     code = "#{params[:user][:pin_0]}#{params[:user][:pin_1]}#{params[:user][:pin_2]}#{params[:user][:pin_3]}"
     @user = current_user
 
-    if current_user.pin_sent_at.blank? || Time.current > current_user.pin_sent_at.advance(minutes: 99990)
+    if current_user.pin_sent_at.blank? || Time.current > current_user.pin_sent_at.advance(minutes: 15)
       flash.now[:alert] = "Your PIN has expired. Please request another."
       render :new and return
     elsif code.try(:to_i) == current_user.pin
