@@ -1,18 +1,14 @@
 # TaskTracker Repository Handover Sheet
 
 ## For Next Time
-- FIx user edit page
+- Profile Card should act as the btn, not just the actual link
+- Fix user edit page
 
 ## Quick Job Tickets
-- Profile Card should act as the btn, not just the actual link
 
 # Marco Work in Pregress
 
 ## Known Issues
-
-## Recent Changes
-- Usernames Added
-- New route for just changing username
 
 ## Next Steps / Wish list
 - Better Search Options
@@ -21,7 +17,7 @@
 ## forms
     - Markdown Better to understand for users
 
-## Tasks    
+## Tasks
     - Tasks need to at least have a title and desciption.
 
 ## User Logins
@@ -41,3 +37,9 @@ for the SCSS you need to have
     Also i should just add this to my bin/dev file
 
 so it properly recompiles upon changes
+
+## Last Changes
+
+- verify now works
+- Usernames Added
+- New route for just changing username
