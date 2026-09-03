@@ -76,3 +76,5 @@ gem "commonmarker"
 gem "sanitize"
 
 gem "pg"
+
+gem "omniauth-google-oauth2"
