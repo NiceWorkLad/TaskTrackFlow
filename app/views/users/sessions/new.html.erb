@@ -23,4 +23,8 @@
   </div>
 <% end %>
 
+<%= button_to "Continue with Google",
+              user_google_oauth2_omniauth_authorize_path,
+              method: :post %>
+
 <%= render "users/shared/links" %>

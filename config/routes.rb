@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get "pages/profile"
   get "pages/dev"
   devise_for :users, controllers: {
-        sessions: "users/sessions"
-      }
+  sessions: "users/sessions",
+  omniauth_callbacks: "users/omniauth_callbacks"
+  }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
