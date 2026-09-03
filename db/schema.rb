@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_20_185851) do
+ActiveRecord::Schema[8.0].define(version: 2026_09_03_142520) do
   create_table "tasks", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -38,6 +38,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_20_185851) do
     t.datetime "pin_sent_at"
     t.boolean "email_verified", default: false
     t.string "username"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
