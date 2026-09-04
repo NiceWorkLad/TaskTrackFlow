@@ -1,2 +1,4 @@
 #!/usr/bin/env ruby
+spawn "./bin/rails", "dartsass:watch"
+
 exec "./bin/rails", "server", *ARGV
