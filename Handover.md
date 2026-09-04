@@ -1,7 +1,8 @@
 # TaskTracker Repository Handover Sheet
 
 ## For Next Time
-- Profile Card should act as the btn, not just the actual link
+- Check on the google status of auth
+- Make all devise Form the same styling design
 - Fix user edit page
 
 ## Quick Job Tickets
@@ -39,7 +40,7 @@ for the SCSS you need to have
 so it properly recompiles upon changes
 
 ## Last Changes
-
+- Google Works (With Whitelist until approved)
 - verify now works
 - Usernames Added
 - New route for just changing username
