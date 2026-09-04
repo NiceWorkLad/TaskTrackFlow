@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get "pages/docs"
   get "pages/profile"
   get "pages/dev"
+  get "/privacy", to: "pages#privacy"
+  get "/terms", to: "pages#terms"
   devise_for :users, controllers: {
   sessions: "users/sessions",
   omniauth_callbacks: "users/omniauth_callbacks"
