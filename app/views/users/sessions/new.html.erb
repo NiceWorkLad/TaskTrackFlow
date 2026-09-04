@@ -1,30 +1,28 @@
-<h2>Log in</h2>
+<div class="center-form">
+  <div class="login-form base-form">
+  <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+    <%= form_for(resource, as: resource_name, class: "loginForm",url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :email, class: "form-label" %>
+      <%= f.email_field :email, autofocus: true,class: "form-input", autocomplete: "email" %>
     </div>
+
+    <div class="field">
+      <%= f.label :password, class: "form-label"%>
+      <%= f.password_field :password,class: "form-input", autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="inline-field">
+        <%= f.label :remember_me, "Stay signed in", class: "form-label" %>
+        <%= f.check_box :remember_me, class: "form-checkbox"%>
+  
+      </div>
+    <% end %>
+      <%= f.submit "Log in", class: "login-btn" %>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= button_to "Continue with Google",
-              user_google_oauth2_omniauth_authorize_path,
-              method: :post %>
-
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
+</div>
+</div>
