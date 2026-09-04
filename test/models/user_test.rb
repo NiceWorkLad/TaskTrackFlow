@@ -18,8 +18,8 @@ class UserTest < ActiveSupport::TestCase
 
     email = ActionMailer::Base.deliveries.last
 
-    assert_equal [email_address], email.to
-    assert_equal ["noreply@contact.tasktrackflow.com"], email.from
+    assert_equal [ email_address ], email.to
+    assert_equal [ "noreply@contact.tasktrackflow.com" ], email.from
     assert_equal "Welcome to TaskTracker!", email.subject
   end
 end
