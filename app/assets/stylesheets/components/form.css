@@ -41,6 +41,7 @@
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   color: #111;
 }
 
@@ -150,4 +151,29 @@
     padding: 1.5rem;
     box-shadow: 4px 4px 0 #111;
   }
+}
+
+.center-form {
+  width:100%;
+  justify-content:center;
+  display:flex;
+}
+
+.login-form {
+    padding: 30px 60px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.inline-field {
+  display:flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  flex-wrap:wrap;
+  gap:15px;
 }
