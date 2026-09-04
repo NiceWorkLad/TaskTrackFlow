@@ -1,6 +1,7 @@
 # TaskTracker Repository Handover Sheet
 
 ## For Next Time
+- Fix Env not readable from Production
 - Check on the google status of auth
 - Make all devise Form the same styling design
 - Fix user edit page
