@@ -1,8 +1,7 @@
 # TaskTracker Repository Handover Sheet
 
 ## For Next Time
-- Fix Env not readable from Production
-- Check on the google status of auth
+- 
 - Make all devise Form the same styling design
 - Fix user edit page
 
@@ -44,7 +43,7 @@ for the SCSS you need to have
 so it properly recompiles upon changes
 
 ## Last Changes
-- Google Works (With Whitelist until approved)
+- Google Works (With Whitelist until approved) in production
 - verify now works
 - Usernames Added
 - New route for just changing username
