@@ -3,7 +3,7 @@
     <div class="task-item task-card-display-list">
       <%= link_to task_path(task), class: "", data: { turbo_frame: "_top" } do %>
         <div class="task-display-list">
-          <p class="task-card__title"><%= truncate task.title,  length: 40, separator: '', omission: '...' %></p>
+          <p class="task-card__title word-wrap-word-break"><%= truncate task.title,  length: 40, separator: '', omission: '...' %></p>
           <div class="task-card-display-list-info">
             <time class="task-card__created" datetime="<%= task.created_at.iso8601 %>"><%= time_ago_in_words(task.created_at) %> ago</time>
             <p class="status-tag"><%= task.status %></p>

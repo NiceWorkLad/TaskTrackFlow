@@ -1,8 +1,9 @@
 <div class="page-show">
-  <h1 class="page-show-title"><%= @task.title %></h1>
-  <p class="page-show-description"><%= @task.description %></p>
+  <h1 class="page-show-title wrap-text-word-break"><%= @task.title %></h1>
+  <p class="page-show-creator wrap-text-word-break" >
+  <p class="page-show-description wrap-text-word-break"><%= @task.description %></p>
   <% if @task.body.present? %>
-  <div class="page-show-markdown-preview">
+  <div class="page-show-markdown-preview wrap-text-word-break">
     <%= raw MarkdownRenderer.render(@task.body) %>
   </div>
   <% end %>

@@ -18,10 +18,9 @@
       <% registration_fields.each do |label, field| %>
         <% value = field.respond_to?(:call) ? field.call(user) : (user.respond_to?(field) ? user.public_send(field) : nil) %>
         <% next if value.blank? %>
-
         <tr>
           <th style="text-align: left; padding-right: 1rem;"><%= label %>:</th>
-          <td><%= value.is_a?(Time) || value.is_a?(DateTime) ? l(value, format: :long) : value %></td>
+          <td class="wrap-text-word-break"><%= value.is_a?(Time) || value.is_a?(DateTime) ? l(value, format: :long) : value %></td>
         </tr>
       <% end %>
     </tbody>
