@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :pin_0, :pin_1, :pin_2, :pin_3
 
   has_many :tasks, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

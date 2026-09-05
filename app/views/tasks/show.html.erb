@@ -11,4 +11,29 @@
   <% if current_user == @task.user %>
     <%= link_to 'Edit', edit_task_path(@task), class: 'btn-edit' %>
   <% end %>
+
+  <%= form_with model: [@task, Comment.new] do |form| %>
+    <%= form.text_area :body %>
+    <%= form.submit "Add comment" %>
+  <% end %>
+
+  <div class="card-comments">
+  <h3>Discussion (<%= @task.comments.count %>)</h3>
+  <% @task.comments.each do |comment| %>
+    <div class="card-comment">
+      <strong><%= comment.user.username %></strong>
+
+      <p><%= comment.body %></p>
+
+      <%= form_with model: [@task, Comment.new], class: "comment-reply-form" do |form| %>
+        <%= form.hidden_field :parent_id, value: comment.id %>
+
+        <%= form.text_area :body, placeholder: "Write a reply..." %>
+
+        <%= form.submit "Reply" %>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+  
 </div>
