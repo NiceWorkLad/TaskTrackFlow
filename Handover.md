@@ -12,6 +12,9 @@
 
 ## Known Issues
 
+## Bugs
+    Auto Correct doesn't update markdown
+
 ## Next Steps / Wish list
 - Better Search Options
     -Sort By (Recent, Oldest, add username to search)
