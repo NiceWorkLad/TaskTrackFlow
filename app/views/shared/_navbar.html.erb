@@ -18,7 +18,7 @@
           </div>
 
           <div class="user-info">
-            <span class="user-username"><%= current_user.username %></span>
+            <span class="user-username"><%=truncate current_user.username, length: 40, separator: '', omission: '...' %></span>
           </div>
         <% end %>
       </li>
