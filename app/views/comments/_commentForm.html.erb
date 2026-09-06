@@ -1,0 +1,15 @@
+<%= form_with model: [@task, Comment.new], class: "comment-reply-form" do |form| %>
+
+  <%= form.hidden_field :parent_id, value: comment.id %>
+
+  <%= form.text_area :body, placeholder: "Write a reply..." %>
+
+  <%= form.submit "Reply" %>
+
+    <button
+    type="button"
+    data-action="click->visibility#hide"
+    data-visibility-targets-param="reply-form-<%= comment.id %>">
+    Cancel
+    </button>
+<% end %>
