@@ -1,9 +1,8 @@
 # TaskTracker Repository Handover Sheet
 
 ## For Next Time
-- 
-- Make all devise Form the same styling design
-- Fix user edit page
+- Replys desplay after unhidden
+- css for comments working nice
 
 ## Quick Job Tickets
 
