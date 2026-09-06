@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :tasks do
-  resources :comments, only: [:create, :destroy]
+  resources :comments, only: [ :create, :destroy ]
 end
 
   get "public_tasks", to: "tasks#public_index", as: "public_tasks"
