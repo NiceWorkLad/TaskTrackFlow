@@ -1,7 +1,8 @@
 # TaskTracker Repository Handover Sheet
 
 ## For Next Time
-- 
+- Privacy Page
+- TOS page
 - Make all devise Form the same styling design
 - Fix user edit page
 
