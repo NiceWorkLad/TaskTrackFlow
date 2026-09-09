@@ -523,6 +523,7 @@ DEPENDENCIES
   dotenv-rails
   importmap-rails
   jbuilder
+  json (= 2.16.0)
   kamal
   omniauth-google-oauth2
   pg
