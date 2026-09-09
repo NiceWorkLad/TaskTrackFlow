@@ -139,7 +139,7 @@ GEM
       tzinfo
     faraday (2.14.3)
       faraday-net_http (>= 2.0, < 3.5)
-      json
+      json (2.16.0)
       logger
     faraday-net_http (3.4.4)
       net-http (~> 0.5)
