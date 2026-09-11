@@ -93,6 +93,7 @@
 
 .page-show__main-buttons {
 	display: flex;
+	justify-content: space-around;
 }
 
 @media (min-width: 1441px) {
