@@ -5,10 +5,15 @@
 }
 
 .page-show-description {
-    font-size:25px;
+    font-size:15px;
+	margin-top:5px;
 }
 
-.page-show-title {}
+.page-show-title {
+	margin-bottom:0;
+	border-bottom: solid 3px #000;
+	display:inline-block;
+}
 
 .page-show-title h1,
 .page-show-title h2,
