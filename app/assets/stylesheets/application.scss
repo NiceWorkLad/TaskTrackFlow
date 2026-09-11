@@ -11,12 +11,16 @@
 
 
 @use "components/buttons";
+@use "components/palette";
+@use "components/text";
 
-@import url('base.css');
-@import url("components/navbar.css"); 
-@import url("components/taskList.css");
-@import url("components/footer.css");
-@import url("components/form.css");
-@import url("components/alerts.css");
-@import url("components/cards.css");
-@import url("pages/show.css");
+@use "base";
+@use "components/navbar";
+@use "taskList";
+@use "components/footer";
+@use "components/form";
+@use "components/alerts";
+@use "components/cards";
+@use "pages/show";
+
+

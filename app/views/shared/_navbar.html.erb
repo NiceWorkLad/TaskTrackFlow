@@ -1,7 +1,7 @@
 <nav class="navbar">
   <%= link_to "Task Track Flow", root_path, class: "navbar-brand" %>
 
-  <ul class="navbar-nav">
+  <ul class="navbar-nav footer-links">
     <li><%= link_to "Public", public_tasks_path, class: "nav-link" %></li>
     <li><%= link_to "Docs", pages_docs_path, class: "nav-link" %></li>
 
@@ -12,7 +12,7 @@
       <% end%>
 
       <li>
-        <%= link_to pages_profile_path, class: "card--user" do %>
+        <%= link_to pages_profile_path, class: "card--user" , id: "profile-card" do %>
           <div class="user-avatar-circle">
             <%= render "shared/icons/user" %>
           </div>

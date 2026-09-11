@@ -1,0 +1,40 @@
+.card--user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-default);
+  border-radius: 12px;
+  text-decoration: none !important;
+  color: var(--text-primary) !important;
+  transition: all 0.2s ease;
+  box-shadow: 4px 4px 0 var(--border-default);
+  min-width: 200px;
+}
+
+.card--user:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--border-default);
+}
+
+.card--user:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0 var(--border-default);
+}
+
+.card--profile {
+  color: var(--text-primary)
+}
+
+.card--show {
+}
+
+.card--index-compact {
+}
+
+.card--index-expanded {
+}
+
+.card--notification{
+}

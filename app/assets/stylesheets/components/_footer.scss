@@ -1,9 +1,9 @@
 .footer {
   margin-top: auto;
   padding: 3rem 0;
-  background-color: #ffffff;
-  border-top: 3px solid #646464;
-  color: #333;
+  background-color: var(--bg-secondary);
+  border-top: 3px solid var(--border-default);
+  color: var(--text-primary);
 }
 
 .footer-content {
@@ -21,7 +21,7 @@
 }
 
 .footer-links a {
-  color: #111;
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -30,7 +30,7 @@
 }
 
 .footer-links a:hover {
-  color: #646464;
+  color: var(--text-muted);
 }
 
 .footer-links a::after {
@@ -40,7 +40,7 @@
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #646464;
+  background-color: var(--text-muted);
   transition: width 0.2s ease;
 }
 

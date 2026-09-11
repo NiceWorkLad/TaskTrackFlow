@@ -1,0 +1,37 @@
+// Light Theme
+$light-text-primary: #111111;
+$light-text-muted: #546a76;
+$light-bg-primary: #FFFFFE;
+$light-bg-secondary: #F0F0EF;
+$light-border-deafult: #111111;
+$light-accent-color: #d00000;
+$light-danger-color: #ffba08;
+
+// Dark Theme
+$dark-text-primary: invert($light-text-primary);
+$dark-text-muted: invert($light-text-muted);
+$dark-bg-primary: invert( $light-bg-primary);
+$dark-bg-secondary: invert($light-bg-secondary);
+$dark-border-deafult: invert($light-border-deafult);
+$dark-accent-color: $light-accent-color;
+$dark-danger-color: $light-danger-color;
+
+[data-theme="light"] {
+  --text-primary: #{$light-text-primary};
+  --text-muted: #{$light-text-muted};
+  --bg-primary: #{$light-bg-primary};
+  --bg-secondary: #{$light-bg-secondary};
+  --border-default: #{$light-border-deafult};
+  --accent-color: #{$light-accent-color};
+  --danger-color: #{$light-danger-color};
+}
+
+[data-theme="dark"] {
+  --text-primary: #{$dark-text-primary};
+  --text-muted: #{$dark-text-muted};
+  --bg-primary: #{$dark-bg-primary};
+  --bg-secondary: #{$dark-bg-secondary};
+  --border-default: #{$dark-border-deafult};
+  --accent-color: #{$dark-accent-color};
+  --danger-color: #{$dark-danger-color};
+}
