@@ -18,6 +18,15 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml"> %>
     <link rel="apple-touch-icon" href="/icon.png">
 
+    <%# Loads theme in head to avoid flash from fast correction %>
+    <script>
+    (function () {
+      const stored = localStorage.getItem('theme');
+      const theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= csrf_meta_tags %>
