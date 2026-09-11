@@ -1,6 +1,9 @@
 # TaskTracker Repository Handover Sheet
 
 ## For Next Time
+- css and view format
+    -making show page look ncer and chagneing around dsome css
+- Homescrren with this info https://support.google.com/cloud/answer/13807376?hl=en-GB
 - Privacy Page
 - TOS page
 - Make all devise Form the same styling design
@@ -14,6 +17,9 @@
 
 ## Bugs
     Auto Correct doesn't update markdown
+
+## Big Problems
+    No encrpt on tasks routes for private tasks
 
 ## Next Steps / Wish list
 - Better Search Options
@@ -31,6 +37,8 @@
 
 ## CSS Next Steps
     - Forms
+        Login
+    - Views Show page
     - Buttons
     - Scss Theme(8-10 greys)
 
