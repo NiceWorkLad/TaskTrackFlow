@@ -24,7 +24,7 @@
       </li>
     <% else %>
       <li>
-        <%= link_to new_user_session_path, class: "card--user" do %>
+        <%= link_to new_user_session_path, class: "card--user", id:"profile-card" do %>
           <div class="user-avatar-circle">
             <%= render "shared/icons/user" %>
           </div>
