@@ -2,8 +2,7 @@
 
 ## Current Step
     1. HOME PAGE
-    2. Confirm Email redirect for contact@tasktrackflow.com
-    4. GOOGLE OAUTH PRODUCTION CONFIGURATION
+    2. GOOGLE OAUTH PRODUCTION CONFIGURATION
     
 ## Bugs
     Auto Correct doesn't update markdown on iphone
