@@ -3,9 +3,9 @@ class SettingsController < ApplicationController
 
   def update_username
     if current_user.update(username_params)
-      redirect_to pages_profile_path, notice: "Username upated successfully."
+      redirect_to profile_path, notice: "Username upated successfully."
     else
-      redirect_to pages_profile_path, alert: current_user.errors.full_messages.to_sentence
+      redirect_to profile_path, alert: current_user.errors.full_messages.to_sentence
     end
   end
 

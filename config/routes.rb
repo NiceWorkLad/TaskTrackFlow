@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/dev", to: "pages#dev"
   get "/privacy", to: "pages#privacy"
   get "/terms", to: "pages#terms"
+
   devise_for :users, controllers: {
   sessions: "users/sessions",
   omniauth_callbacks: "users/omniauth_callbacks"
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
 
   patch "/settings/username", to: "settings#update_username", as: :settings_username
 
-  root to: "tasks#public_index"
+  root to: "pages#home"
 
   get "/verify" => "verify#edit", :as => "verify"
   get "/verify" => "verify#new", :as => "new_verify"
