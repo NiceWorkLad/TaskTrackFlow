@@ -26,10 +26,12 @@ class TasksController < ApplicationController
   end
 
   def create
-  @task = current_user.tasks.new(task_params)
-    if @task.save
+    @task = current_user.tasks.new(task_params)
+    if @task.title.present? && @task.body.present? && @task.save
       redirect_to tasks_path(@task), notice: "Task was successfully created."
     else
+      @task.errors.add(:title, "can't be blank") if @task.title.blank?
+      @task.errors.add(:body, "can't be blank") if @task.body.blank?
       render :new
     end
   end

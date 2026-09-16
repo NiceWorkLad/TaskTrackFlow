@@ -12,11 +12,11 @@
 
   <div class="form-group">
     <%= form.label :title, "Heading", class: "form-label" %>
-    <%= form.text_field :title, class: "form-input", placeholder: "Enter task title" %>
+    <%= form.text_field :title, class: "form-input", placeholder: "Enter task title", required: true %>
   </div>
 
   <div class="form-group">
-    <%= form.label :description, class: "form-label" %>
+    <%= form.label :description, "description (optional)", class: "form-label" %>
     <%= form.text_field:description, class: "form-input", placeholder: "A little about the task" %>
   </div>
 
@@ -27,7 +27,7 @@
       <a href="https://www.markdownguide.org/basic-syntax/">Learn About Markdown</a>
    </div> %>
     <%= form.text_area :body, class: "form-textarea", placeholder: "User Markdown to Create your Body",
-      data: { controller: "auto-grow", action: "input->auto-grow#resize" } %>
+      data: { controller: "auto-grow", action: "input->auto-grow#resize" }, required: true %>
   </div>
 
   <div class="form-group">
