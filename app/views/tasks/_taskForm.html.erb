@@ -41,8 +41,8 @@
   </div>
 
   <div class="form-checkbox-group">
-    <%= form.check_box :public, class: "form-checkbox" %>
-    <%= form.label :public, "Make this task public", class: "form-label", style: "margin-bottom: 0" %>
+    <%= form.label :visibility, "Visibility", class: "form-label" %>
+    <%= form.select :visibility, [["Public", 0], ["Unlisted", 1], ["Private", 2]], {}, class: "form-input" %>
   </div>
 
   <div class="form-actions">

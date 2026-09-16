@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_09_03_142520) do
+ActiveRecord::Schema[8.0].define(version: 2026_09_16_150323) do
   create_table "tasks", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.boolean "public", default: false
     t.string "priority", default: "low"
     t.date "due_date"
     t.string "status", default: "pending"
     t.text "body"
     t.boolean "completed", default: false
+    t.integer "visibility", default: 0, null: false
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 

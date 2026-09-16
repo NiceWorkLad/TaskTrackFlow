@@ -10,14 +10,14 @@ class TasksController < ApplicationController
   end
 
   def public_index
-    @tasks = Task.where(public: true)
+    @tasks = Task.where(visibility: 0)
     @tasks = @tasks.search(params[:query]) if params[:query].present?
     @tasks = @tasks.order(due_date: :asc)
   end
 
   def show
     @task = Task.find(params[:id])
-    @showuser = @task.public || current_user.id == @task.user_id
+    @showuser = @task.visibility < 2 || current_user&.id == @task.user_id
   end
 
   def new
@@ -56,7 +56,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :description, :status, :public, :body, :due_date, :completed)
+    params.require(:task).permit(:title, :description, :status, :visibility, :body, :due_date, :completed)
   end
 
   def set_view_mode
