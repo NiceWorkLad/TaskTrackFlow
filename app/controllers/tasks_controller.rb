@@ -17,6 +17,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+    @showuser = @task.public || current_user.id == @task.user_id
   end
 
   def new

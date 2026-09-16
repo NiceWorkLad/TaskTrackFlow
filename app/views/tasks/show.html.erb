@@ -1,4 +1,5 @@
 <div class="page-show">
+  <% if @showuser %>
   <div class="page-show__task">
   <div class="page-show__main">
   <h1 class="page-show__title wrap-text-word-break"><%= @task.title %></h1>
@@ -21,4 +22,9 @@
   <p class="page-show__description wrap-text-word-break"><%= @task.description %></p>
   </div>
   </div>
+  <% else %>
+  <div class="page-show_task">
+    <h2>You do not have permission to view this task</h2>
+  </div>
+  <% end%>
 </div>
