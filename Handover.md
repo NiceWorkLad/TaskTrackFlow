@@ -2,10 +2,10 @@
 
 ## Current Step
 	
-    - TASK CONSTROLLER No encrpt on tasks routes for priva>
-        - Routes for Tasks using UUID for security of unli>
-        - Name swap "Private" becomes "unlisted" as behave>
-        - New State "Private" for actual Owner only viewin>
+    - TASK CONSTROLLER No encrpt on tasks routes for private tasks, use UUIDs
+        - Routes for Tasks using UUID for security of unlisted Tasks
+        - Name swap "Private" becomes "unlisted" as behaves the same way    
+        - New State "Private" for actual Owner only viewing
         - Authorization for Owners only show and index		
 
 ## Bugs
