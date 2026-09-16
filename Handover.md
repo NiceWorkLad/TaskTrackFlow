@@ -1,9 +1,13 @@
 # TaskTracker Repository Handover Sheet
 
 ## Current Step
-    1. HOME PAGE
-    2. GOOGLE OAUTH PRODUCTION CONFIGURATION
-    
+	
+    - TASK CONSTROLLER No encrpt on tasks routes for priva>
+        - Routes for Tasks using UUID for security of unli>
+        - Name swap "Private" becomes "unlisted" as behave>
+        - New State "Private" for actual Owner only viewin>
+        - Authorization for Owners only show and index		
+
 ## Bugs
     Auto Correct doesn't update markdown on iphone
 
