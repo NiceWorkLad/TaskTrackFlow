@@ -6,7 +6,6 @@
         - Routes for Tasks using UUID for security of unlisted Tasks
         - Name swap "Private" becomes "unlisted" as behaves the same way    
         - New State "Private" for actual Owner only viewing
-        - Authorization for Owners only show and index		
 
 ## Bugs
     Auto Correct doesn't update markdown on iphone
