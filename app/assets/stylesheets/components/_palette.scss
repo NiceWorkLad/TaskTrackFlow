@@ -8,11 +8,11 @@ $light-accent-color: #d00000;
 $light-danger-color: #ffba08;
 
 // Dark Theme
-$dark-text-primary: invert($light-text-primary);
-$dark-text-muted: invert($light-text-muted);
-$dark-bg-primary: invert( $light-bg-primary);
-$dark-bg-secondary: invert($light-bg-secondary);
-$dark-border-deafult: invert($light-border-deafult);
+$dark-text-primary: #eeeeee;
+$dark-text-muted: #ab9589;
+$dark-bg-primary: #000001;
+$dark-bg-secondary: #0f0f10;
+$dark-border-deafult: #eeeeee;
 $dark-accent-color: $light-accent-color;
 $dark-danger-color: $light-danger-color;
 
