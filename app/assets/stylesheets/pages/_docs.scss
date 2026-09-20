@@ -1,0 +1,21 @@
+.page-docs__container {
+    margin: 40px;
+}
+
+.page-docs__title {
+    border-bottom: solid 3px var(--border-default);
+    text-align: center;
+    justify-self: center;
+    margin-bottom: 0;
+}
+
+.page-docs__version {
+    text-align: center;
+    margin-top: 0;
+}
+
+.page-docs__links {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}

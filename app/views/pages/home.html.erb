@@ -1,0 +1,81 @@
+<main class="page-home">
+  <header class="page-home__hero">
+    <h1 class="page-home__title">TaskTracker</h1>
+    <p class="page-home__tagline">
+      Create, organise, track, and share your tasks in one simple workspace.
+    </p>
+
+    <%= link_to "Get started", public_tasks_path, class: "page-home__button base-btn-2" %>
+  </header>
+
+  <section class="page-home__features" aria-labelledby="features-heading">
+    <h2 id="features-heading" class="page-home__section-title">
+      Everything you need to manage your tasks.
+    </h2>
+
+    <div class="page-home__feature-list">
+      <article class="page-home__feature">
+        <h3 class="page-home__feature-title">Create tasks</h3>
+        <p class="page-home__feature-description">
+          Create tasks with titles, descriptions, priorities, due dates, and
+          other details to keep your work organised.
+        </p>
+      </article>
+
+      <article class="page-home__feature">
+        <h3 class="page-home__feature-title">Track your progress</h3>
+        <p class="page-home__feature-description">
+          Keep track of your tasks and their status so you can see what has
+          been completed and what still needs your attention.
+        </p>
+      </article>
+
+      <article class="page-home__feature">
+        <h3 class="page-home__feature-title">Share your tasks</h3>
+        <p class="page-home__feature-description">
+          Choose how your tasks are shared and make selected tasks available
+          for others to view.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-home__about" aria-labelledby="about-heading">
+    <h2 id="about-heading" class="page-home__section-title">
+      About TaskTracker
+    </h2>
+
+    <p class="page-home__about-description">
+      TaskTracker is a web application for creating and managing tasks.
+      It provides a simple workspace where users can organise their tasks,
+      monitor progress, and share selected tasks with others.
+    </p>
+  </section>
+
+  <section class="page-home__how-it-works" aria-labelledby="how-it-works-heading">
+    <h2 id="how-it-works-heading" class="page-home__section-title">
+      How it works
+    </h2>
+
+    <ol class="page-home__steps">
+      <li class="page-home__step">Create an account or sign in.</li>
+      <li class="page-home__step">Create and organise your tasks.</li>
+      <li class="page-home__step">Update your tasks as you make progress.</li>
+      <li class="page-home__step">
+        Choose whether individual tasks should be shared with others.
+      </li>
+    </ol>
+  </section>
+
+  <section class="page-home__cta" aria-labelledby="cta-heading">
+    <h2 id="cta-heading" class="page-home__section-title">
+      Start using TaskTracker
+    </h2>
+
+    <p class="page-home__cta-description">
+      Create your tasks and keep your work organised.
+    </p>
+
+    <%= link_to "Sign Up Here", tasks_path, class: "page-home__button base-btn-2" %>
+  </section>
+</main>

@@ -80,3 +80,7 @@ gem "sanitize"
 gem "pg"
 
 gem "omniauth-google-oauth2"
+
+ruby "3.3.4"
+
+gem "json", "2.16.0"

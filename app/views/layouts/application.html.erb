@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Task Tracker" %></title>
+    <title><%= content_for(:title) || "Task Track Flow" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="google-site-verification" content="UozdnzjqMXgusDww6sizw4gN9QPX1c8aEHWxShOMUWU" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,6 +19,15 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml"> %>
     <link rel="apple-touch-icon" href="/icon.png">
 
+    <%# Loads theme in head to avoid flash from fast correction %>
+    <script>
+    (function () {
+      const stored = localStorage.getItem('theme');
+      const theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= csrf_meta_tags %>
@@ -30,7 +40,7 @@
 
   </head>
 
-  <body>
+  <body data-controller="theme" data-action="turbo:load->theme#applyTheme">
     <%= render "shared/navbar" %>
 
     <% if notice %>

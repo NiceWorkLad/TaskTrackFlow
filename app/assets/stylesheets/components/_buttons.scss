@@ -11,55 +11,60 @@ $btn-size-lg-font-size: 16px;
 $btn-size-xl-padding: 16px 32px;
 $btn-size-xl-font-size: 18px;
 
+
+
 .base-btn-1 {
     position: relative;
     padding: 0.75rem 2.4rem;
     font-size: 0.8rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #111;
+    color: var(--text-primary);
     background: transparent;
-    border: 1.5px solid #111;
+    border: 1.5px solid var(--border-default);
     cursor: pointer;
     overflow: hidden;
     transition: color 0.35s ease;
+    display: block;
   }
   .base-btn-1::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: #111;
+    background: var(--border-default);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 0;
+    display:block;
   }
   .base-btn-1 span { position: relative; z-index: 1; }
-  .base-btn-1:hover { color: #f5f5f0; }
+  .base-btn-1:hover { color: var(--border-default); }
   .base-btn-1:hover::before { transform: scaleX(1); }
 
   .base-btn-2 {
     margin: 10px;
     position: relative;
     padding: 0.75rem 2.4rem;
-    font-size: 0.9rem;
+    font-size: 20px;
     font-style: italic;
     letter-spacing: 0.04em;
-    color: #111;
+    color: var(--text-primary);
     background: transparent;
-    border: 1.5px solid #111;
+    border: 1.5px solid var(--border-default);
     cursor: pointer;
     outline: none;
-    box-shadow: 3px 3px 0 #111;
+    box-shadow: 3px 3px 0 var(--border-default);
     transition: box-shadow 0.1s ease, transform 0.1s ease;
+    display: inline;
   }
   .base-btn-2:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 #111;
+    box-shadow: 6px 6px 0 var(--border-default);
   }
   .base-btn-2:active {
     transform: translate(0, 0);
-    box-shadow: 0 0 0 #111;
+    box-shadow: 0 0 0 var(--border-default);
   }
 
   .base-btn-3 {
@@ -68,10 +73,11 @@ $btn-size-xl-font-size: 18px;
     font-size: 0.8rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #111;
+    color: var(--text-primary);
     background: transparent;
     border: none;
     cursor: pointer;
+    display:block;
   }
   .base-btn-3::before,
   .base-btn-3::after {
@@ -83,13 +89,13 @@ $btn-size-xl-font-size: 18px;
   }
   .base-btn-3::before {
     top: 0; left: 0;
-    border-top: 1.5px solid #111;
-    border-left: 1.5px solid #111;
+    border-top: 1.5px solid var(--border-default);
+    border-left: 1.5px solid var(--border-default);
   }
   .base-btn-3::after {
     bottom: 0; right: 0;
-    border-bottom: 1.5px solid #111;
-    border-right: 1.5px solid #111;
+    border-bottom: 1.5px solid var(--border-default);
+    border-right: 1.5px solid var(--border-default);
   }
   .base-btn-3 .c-tr, .base-btn-3 .c-bl {
     position: absolute;
@@ -97,8 +103,8 @@ $btn-size-xl-font-size: 18px;
     height: 12px;
     transition: width 0.3s ease, height 0.3s ease;
   }
-  .base-btn-3 .c-tr { top: 0; right: 0; border-top: 1.5px solid #111; border-right: 1.5px solid #111; }
-  .base-btn-3 .c-bl { bottom: 0; left: 0; border-bottom: 1.5px solid #111; border-left: 1.5px solid #111; }
+  .base-btn-3 .c-tr { top: 0; right: 0; border-top: 1.5px solid var(--border-default); border-right: 1.5px solid var(--border-default); }
+  .base-btn-3 .c-bl { bottom: 0; left: 0; border-bottom: 1.5px solid var(--border-default); border-left: 1.5px solid var(--border-default); }
   .base-btn-3:hover::before,
   .base-btn-3:hover::after,
   .base-btn-3:hover .c-tr,
@@ -112,11 +118,12 @@ $btn-size-xl-font-size: 18px;
     font-size: 0.8rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #111;
-    background: #111;
-    color: #f5f5f0;
-    border: 1.5px solid #111;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    color:  var(--text-primary);
+    border: 1.5px solid var(--border-default);
     cursor: pointer;
+    display:block;
   }
   .base-btn-4::before {
     content: attr(data-label);
@@ -125,8 +132,8 @@ $btn-size-xl-font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f5f5f0;
-    color: #111;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     clip-path: inset(100% 0 0 0);
     transition: none;
   }
@@ -147,11 +154,12 @@ $btn-size-xl-font-size: 18px;
     padding: 0.75rem 2.4rem;
     font-size: 1rem;
     letter-spacing: 0.06em;
-    color: #111;
+    color: var(--text-primary);
     background: transparent;
-    border: 1.5px solid #111;
+    border: 1.5px solid var(--border-default);
     cursor: pointer;
     overflow: hidden;
+    display:block;
   }
   .base-btn-5::after {
     content: '';
@@ -160,7 +168,7 @@ $btn-size-xl-font-size: 18px;
     bottom: 0;
     width: 100%;
     height: 1.5px;
-    background: #111;
+    background: var(--bg-primary);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
@@ -186,7 +194,7 @@ $btn-size-xl-font-size: 18px;
   .btn-delete,
   .btn-cancel,
   .btn-update{
-  display: inline-block;
+  display: block;
   padding: $btn-size-sm-padding;
   border-radius: 2px;
   border: none;
@@ -194,7 +202,7 @@ $btn-size-xl-font-size: 18px;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .btn-edit {
@@ -270,7 +278,7 @@ $btn-size-xl-font-size: 18px;
   padding: 0.4rem 0.5rem;
   font-family: "DM Serif Text", serif;
   font-size: 1rem;
-  border: 2px solid #111;
+  border: 2px solid var(--bg-primary);
   background: #fdfdfd;
   outline: none;
   transition: all 0.2s ease;
@@ -281,22 +289,18 @@ $btn-size-xl-font-size: 18px;
 
 .login-btn:hover {
   background: #fff;
-  box-shadow: 4px 4px 0 #111;
+  box-shadow: 4px 4px 0 var(--bg-primary);
   transform: translate(-2px, -2px);
 }
 
 .login-btn:active {
   transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0 #111;
+  box-shadow: 0px 0px 0 var(--bg-primary);
 }
 
 // Google Sign In Css from them
 
 .gsi-material-button {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -webkit-appearance: none;
   background-color: WHITE;
   background-image: none;
   border: 1px solid #747775;
@@ -380,7 +384,7 @@ $btn-size-xl-font-size: 18px;
   opacity: 38%;
 }
 
-.gsi-material-button:not(:disabled):active .gsi-material-button-state, 
+.gsi-material-button:not(:disabled):active .gsi-material-button-state,
 .gsi-material-button:not(:disabled):focus .gsi-material-button-state {
   background-color: #303030;
   opacity: 12%;

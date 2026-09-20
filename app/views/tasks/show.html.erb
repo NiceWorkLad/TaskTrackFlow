@@ -1,55 +1,14 @@
 <div class="page-show">
-  <h1 class="page-show-title wrap-text-word-break">
-    <%= @task.title %>
-  </h1>
-
-  <p class="page-show-creator wrap-text-word-break"></p>
-
-  <p class="page-show-description wrap-text-word-break">
-    <%= @task.description %>
-  </p>
-
+  <h1 class="page-show-title wrap-text-word-break"><%= @task.title %></h1>
+  <p class="page-show-creator wrap-text-word-break" >
+  <p class="page-show-description wrap-text-word-break"><%= @task.description %></p>
   <% if @task.body.present? %>
-    <div class="page-show-markdown-preview wrap-text-word-break">
-      <%= raw MarkdownRenderer.render(@task.body) %>
-    </div>
+  <div class="page-show-markdown-preview wrap-text-word-break">
+    <%= raw MarkdownRenderer.render(@task.body) %>
+  </div>
   <% end %>
-
   <h6><%= @task.status %></h6>
-
   <% if current_user == @task.user %>
     <%= link_to 'Edit', edit_task_path(@task), class: 'btn-edit' %>
   <% end %>
-
-  <%= form_with model: [@task, Comment.new] do |form| %>
-    <%= form.text_area :body %>
-    <%= form.submit "Add comment" %>
-  <% end %>
-
-  <div class="card-comments">
-    <h3>Comments (<%= @task.comments.count %>)</h3>
-
-
-    <% @task.comments.where(parent_id: nil).each do |comment| %>
-      <div class="card-comment" data-controller="visibility">
-        <strong><%= comment.user.username %></strong>
-
-        <p><%= comment.body %></p>
-
-        <button
-          id="reply-button-<%= comment.id %>"
-          type="button"
-          data-action="click->visibility#show"
-          data-visibility-targets-param="reply-form-<%= comment.id %>">
-          Reply
-        </button>
-
-        <div id="reply-form-<%= comment.id %>" hidden>
-          <%= render "comments/commentForm", comment: comment %>
-        </div>
-
-        
-      </div>
-    <% end %>
-  </div>
 </div>

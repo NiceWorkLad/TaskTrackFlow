@@ -10,5 +10,5 @@ class PagesController < ApplicationController
     flash[flash_type.to_sym] = flash_message
   end
   render :dev
-end
+  end
 end

@@ -12,11 +12,11 @@
 
   <div class="form-group">
     <%= form.label :title, "Heading", class: "form-label" %>
-    <%= form.text_field :title, class: "form-input", placeholder: "Enter task title" %>
+    <%= form.text_field :title, class: "form-input", placeholder: "Enter task title", required: true %>
   </div>
 
   <div class="form-group">
-    <%= form.label :description, class: "form-label" %>
+    <%= form.label :description, "description (optional)", class: "form-label" %>
     <%= form.text_field:description, class: "form-input", placeholder: "A little about the task" %>
   </div>
 
@@ -27,9 +27,9 @@
       <a href="https://www.markdownguide.org/basic-syntax/">Learn About Markdown</a>
    </div> %>
     <%= form.text_area :body, class: "form-textarea", placeholder: "User Markdown to Create your Body",
-      data: { controller: "auto-grow", action: "input->auto-grow#resize" } %>
+      data: { controller: "auto-grow", action: "input->auto-grow#resize" }, required: true %>
   </div>
-  
+
   <div class="form-group">
     <%= form.label :due_date, class: "form-label" %>
     <%= form.date_field :due_date, class: "form-input" %>
@@ -41,19 +41,19 @@
   </div>
 
   <div class="form-checkbox-group">
-    <%= form.check_box :public, class: "form-checkbox" %>
-    <%= form.label :public, "Make this task public", class: "form-label", style: "margin-bottom: 0" %>
+    <%= form.label :visibility, "Visibility", class: "form-label" %>
+    <%= form.select :visibility, [["Public", 0], ["Unlisted", 1], ["Private", 2]], {}, class: "form-input" %>
   </div>
 
   <div class="form-actions">
-    
-    <%= link_to 'Cancel', tasks_path, class: "btn-cancel", style: "text-decoration: none" %>
+
+    <%= link_to 'Cancel', tasks_path, class: "base-btn-2", style: "text-decoration: none" %>
 
   <% if task.persisted? %>
-      <%= form.submit 'Save Changes', class: 'btn-update' %>
-      <%= link_to "Delete",task_path(@task), class: 'btn-delete' , data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <%= form.submit 'Save Changes', class: 'base-btn-2' %>
+      <%= link_to "Delete",task_path(@task), class: 'base-btn-2' , data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     <% else %>
-    <%= form.submit 'Create', class: 'btn-update' %>
+    <%= form.submit 'Create', class: 'base-btn-2' %>
   <% end %>
   </div>
 <% end %>

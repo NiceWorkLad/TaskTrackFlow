@@ -2,18 +2,18 @@
   max-width: 600px;
   margin: 2rem auto;
   padding: 2.5rem;
-  background: #fff;
-  border: 3px solid #111;
-  box-shadow: 8px 8px 0 #111;
+  background: var(--bg-primary);
+  border: 3px solid var(--border-default);
+  box-shadow: 8px 8px 0 var(--border-default);
 }
 
 .wide-base-form {
   max-width: 100%;
   margin: 2rem auto;
   padding: 2.5rem;
-  background: #fff;
-  border: 3px solid #111;
-  box-shadow: 8px 8px 0 #111;
+  background: var(--bg-primary);
+  border: 3px solid var(--border-default);
+  box-shadow: 8px 8px 0 var(--border-default);
 }
 .form-title {
   display: block;
@@ -21,8 +21,8 @@
   margin: 2rem auto;
   font-size: 2.5rem;
   font-weight: 800;
-  color: #111;
-  border-bottom: 3px solid #646464;
+  color:  var(--text-primary);
+  border-bottom: 3px solid  var(--border-default);
   padding-bottom: 0.5rem;
   text-align: center;
 }
@@ -42,7 +42,7 @@
   font-weight: 700;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
-  color: #111;
+  color: var(--text-primary);
 }
 
 .form-input,
@@ -52,16 +52,17 @@
   padding: 0.8rem 1rem;
   font-family: "DM Serif Text", serif;
   font-size: 1rem;
-  border: 2px solid #111;
-  background: #fdfdfd;
+  border: 2px solid var(--border-default);
+  background:  var(--bg-secondary);
   outline: none;
   transition: all 0.2s ease;
   box-sizing: border-box;
   font-weight: 800;
+  color: var(--text-primary)
 }
 
 .form-input::placeholder{
-  color: #000;
+  color: var(--text-muted);
   font-weight: 800;
   font-style: italic;
 }
@@ -69,8 +70,8 @@
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {
-  background: #fff;
-  box-shadow: 4px 4px 0 #111;
+  background: var(--bg-primary);
+  box-shadow: 4px 4px 0 var(--border-default);
   transform: translate(-2px, -2px);
 }
 
@@ -91,25 +92,25 @@
 .form-checkbox {
   width: 20px;
   height: 20px;
-  border: 2px solid #111;
+  border: 2px solid var(--border-default);
   cursor: pointer;
-  accent-color: #111;
+  accent-color: var(--accent-color);
 }
 
 .form-submit {
   padding: 0.8rem 1rem;
   font-family: "DM Serif Text", serif;
   font-size: 1rem;
-  border: 2px solid #111;
-  background: #fdfdfd;
+  border: 2px solid var(--border-default);
+  background: var(--bg-secondary);
   outline: none;
   transition: all 0.2s ease;
   box-sizing: border-box;
 }
 
 .form-submit:hover {
-  background: #fff;
-  box-shadow: 4px 4px 0 #111;
+  background: var(--bg-primary);
+  box-shadow: 4px 4px 0 var(--border-default);
   transform: translate(-2px, -2px);
 }
 
@@ -127,29 +128,29 @@
 
 /* Error messages styling */
 #error_explanation {
-  background: #fff;
-  border: 2px solid #d9534f;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-default);
   padding: 1rem;
   margin-bottom: 2rem;
-  box-shadow: 4px 4px 0 #d9534f;
+  box-shadow: 4px 4px 0 var(--border-default);
 }
 
 #error_explanation h2 {
   font-size: 1.2rem;
-  color: #d9534f;
+  color: var(--text-primary);
   margin-top: 0;
 }
 
 #error_explanation ul {
   margin: 0;
   padding-left: 1.2rem;
-  color: #d9534f;
+  color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
   .base-form {
     padding: 1.5rem;
-    box-shadow: 4px 4px 0 #111;
+    box-shadow: 4px 4px 0 var(--border-default);
   }
 }
 

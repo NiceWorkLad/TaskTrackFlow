@@ -27,6 +27,11 @@
   </table>
 
   <hr>
+  <h2>Appearance Settings</h2>
+  <div class="theme-settings">
+    <h3>Change Theme</h3>
+    <button data-action="click->theme#toggle" class='base-btn-2'>Toggle theme</button>
+  </div>
   <h2>User Settings</h2>
   <div class="username-settings">
     <h3>Change Username</h3>
@@ -36,25 +41,25 @@
         <%= form.text_field :username, value: user.username, class: "form-control" %>
       </div>
       <div class="actions">
-        <%= form.submit "Update Username", class: "btn base-btn-1" %>
+        <%= form.submit "Update Username", class: "btn base-btn-2" %>
       </div>
     <% end %>
   </div>
-
+<hr>
   <h2>Email Settings</h2>
   <% if user.email_verified %>
     <p> Email Verified </p>
   <% else %>
     <h4>Email Not Verified<h4>
-    <%= link_to "Verify Here", verify_path, class:"base-btn-1" %>
+    <%= link_to "Verify Here", verify_path, class:"base-btn-2" %>
   <% end%>
 
-<%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link base-btn-1" %>
+<%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "base-btn-2" %>
 
 
 <h3>Cancel my account</h3>
 
-<div>Unhappy With Your account?<%= button_to "Cancel my account", registration_path(user), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+<div>Unhappy With Your account?<%= button_to "Cancel my account", registration_path(user), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, class: "base-btn-2", method: :delete %></div>
 
 <% else %>
   <h1>Profile</h1>
