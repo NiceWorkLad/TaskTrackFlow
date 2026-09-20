@@ -1,6 +1,10 @@
 # TaskTracker Repository Handover Sheet
 
+    - JS controller for showing full text and turn on and off. (Comment text, taks body that kind of thing, make it reuasble for other parts)
 
+    - Plan out comment css with replies
+
+    - hotwire comments loading
 
 ## Bugs
     Auto Correct doesn't update markdown on iphone
