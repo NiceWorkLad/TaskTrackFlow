@@ -1,5 +1,17 @@
 .page-docs__container {
     margin: 40px;
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    h3 {
+        margin-top: 40px;
+        font-size: 1.5rem;
+    }
+    h4 {
+      font-weight: 300;
+      font-size: 1.2rem;
+    }
 }
 
 .page-docs__title {
@@ -18,4 +30,9 @@
     display: flex;
     flex-direction:row;
     justify-content: center;
+}
+
+.page-docs__hr {
+    border-bottom: 1px solid var(--border-default);
+    width: 100%
 }
