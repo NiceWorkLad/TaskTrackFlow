@@ -66,6 +66,6 @@ class TasksController < ApplicationController
       session[:view_mode] = params[:view]
     end
 
-    @view_mode = session[:view_mode] || "list"
+    @view_mode = session[:view_mode] || "grid"
   end
 end

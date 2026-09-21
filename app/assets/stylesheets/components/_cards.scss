@@ -27,6 +27,10 @@
   color: var(--text-primary)
 }
 
+.card--user:focus {
+  outline: 3px solid var(--danger-color);
+}
+
 .card--show {
 }
 
