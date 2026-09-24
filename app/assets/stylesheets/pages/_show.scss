@@ -119,6 +119,11 @@
 .page-show__comment-body {
   text-align: left;
   font-size: 18px;
+  p {
+	  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	  padding: 0px;
+	  margin: 0px;
+  }
 }
 
 .page-show__comment-username{
