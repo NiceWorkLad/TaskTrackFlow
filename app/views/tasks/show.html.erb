@@ -1,26 +1,45 @@
 <div class="page-show">
   <% if @showuser %>
   <div class="page-show__task">
-  <div class="page-show__main">
-  <h1 class="page-show__title wrap-text-word-break"><%= @task.title %></h1>
-  <% if @task.body.present? %>
-  <div class="page-show__body wrap-text-word-break">
-    <%= raw MarkdownRenderer.render(@task.body) %>
-  </div>
-  <div class="page-show__main-buttons">
-  <% end %>
-  <% if current_user == @task.user %>
-    <%= link_to 'Edit', edit_task_path(@task), class: 'btn-edit' %>
-  <% end %>
-  </div>
-  </div>
-  <div class="page-show__details">
-  <div class="page-show__creation">
-    <p class="page-show__creator wrap-text-word-break" ><span class="page-show__creator-name"><%= @task.user.username %></span></p>
-    <p class="page-show__date"><%= @task.created_at.to_date %></p>
-  </div>
-  <p class="page-show__description wrap-text-word-break"><%= @task.description %></p>
-  </div>
+    <div class="page-show__main">
+      <h1 class="page-show__title wrap-text-word-break"><%= @task.title %></h1>
+      <% if @task.body.present? %>
+      <div class="page-show__body wrap-text-word-break">
+        <%= raw MarkdownRenderer.render(@task.body) %>
+      </div>
+      <div class="page-show__main-buttons">
+        <% end %>
+        <% if current_user == @task.user %>
+        <%= link_to 'Edit', edit_task_path(@task), class: 'btn-edit' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="page-show__details">
+      <div class="page-show__creation">
+        <p class="page-show__creator wrap-text-word-break" ><span class="page-show__creator-name"><%= @task.user.username %></span></p>
+        <p class="page-show__date"><%= @task.created_at.to_date %></p>
+      </div>
+      <p class="page-show__description wrap-text-word-break"><%= @task.description %></p>
+    </div>
+    </div>
+      <section class="page-show__comments-section">
+        <% @comments.each do |comment| %>
+        <div class="page-show__comment-box">
+          <div class="page-show__comment-user">
+            <h4 class="page-show__comment-username"><%= comment.user.username %></h4>
+            <p class="page-show__comment-time">7 mins ago</p>
+          </div>
+          <div class="page-show__comment-body">
+            <p><%= comment.body %></p>
+            <div class="page-show__comment-buttons">
+              <button class="page-show__comment-button"> Reply... </button>
+              <button class="page-show__comment-button"> See 14 replies </button>
+            
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </section>
   </div>
   <% else %>
   <div class="page-show_task">
