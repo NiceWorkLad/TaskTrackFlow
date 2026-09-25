@@ -1,0 +1,22 @@
+<div data-controller="visibility">
+    <section class="reply-section">
+        <% Comment.where(parent_id: comment.id).each do |comment| %>
+        <div class="comment-box" id="comment_<%= comment.id %>">
+          <div class="comment-user">
+            <h4 class="comment-username"><%= comment.user.username %></h4>
+            <p class="comment-time"><% elapsed_seconds = (Time.current - comment.created_at).to_i %><% if elapsed_seconds < 1.hour %><%= pluralize([elapsed_seconds / 1.minute, 1].max, "min") %> ago<% elsif elapsed_seconds < 1.day %><%= pluralize(elapsed_seconds / 1.hour, "hour") %> ago<% else %><%= pluralize(elapsed_seconds / 1.day, "day") %> ago<% end %></p>
+          </div>
+          <div class="comment-body">
+            <p><%= comment.body %></p>
+            <div class="comment-buttons">
+              <% if Comment.where(parent_id: comment.id).count > 0 %>
+                <button class="comment-button" type="button" data-action="visibility#toggle" data-visibility-targets-param="replies-<%= comment.id %>"> <%= Comment.where(parent_id: comment.id).count %> replies</button>
+              <% end %>
+              <button class="comment-button" type="button" data-action="visibility#show" data-visibility-targets-param="comment-form-<%= comment.id %>">Reply</button>
+            </div>
+          </div>
+        </div>
+        <% end %>
+    </section>
+    <%# <button type="button" data-action="visibility#hide" data-visibility-targets-param="replies-comment-id">Hide replies</button> %>
+</div>

@@ -13,6 +13,15 @@ export default class extends Controller {
     this.setVisibility(event.params.targets, true)
   }
 
+  toggle(event) {
+    event.params.targets.split(",").forEach((id) => {
+      const target = document.getElementById(id.trim())
+      if (target) {
+        target.hidden = !target.hidden
+      }
+    })
+  }
+
   setVisibility(targets, hidden) {
     targets.split(",").forEach((id) => {
       const target = document.getElementById(id.trim())
