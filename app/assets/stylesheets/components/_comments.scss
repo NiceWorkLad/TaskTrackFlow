@@ -1,0 +1,64 @@
+.comments-section {
+  padding:0px;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  width:70%;
+  justify-self: center;
+}
+
+.reply-section {
+    margin-left: 35px;
+}
+
+.comment-box {
+  border:solid 2px #f1f1f1;
+  margin:5px;
+  padding: 5px 20px;
+  box-shadow: 2px 2px 2px #a1a1a1;
+  display:flex;
+  flex-direction: column;
+  justify-content:left;
+}
+
+.comment-user {
+  display:flex;
+  gap:20px;
+  flex-direction:row;
+  align-items:center;
+}
+
+.comment-body {
+  text-align: left;
+  font-size: 18px;
+  p {
+	  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	  padding: 0px;
+	  margin: 0px;
+  }
+}
+
+.comment-username{
+  font-size: 20px;
+  margin: 0px;
+}
+.comment-time {
+	margin: 0px;
+}
+
+.comment-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content:right;
+  gap: 5px;
+}
+
+
+.comment-button {
+  padding: 2px;
+  background: white;
+}
+
+.comment-button:hover {
+  transform: translate(-2px, -2px);
+}
