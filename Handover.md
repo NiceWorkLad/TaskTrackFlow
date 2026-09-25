@@ -1,8 +1,11 @@
 # TaskTracker Repository Handover Sheet
 
-    - JS controller for showing full text and turn on and off. (Comment text, taks body that kind of thing, make it reuasble for other parts)
+    
+    - be able to reply to comments
 
-    - Plan out comment css with replies
+    - add btn for comment to tasks
+
+    - add delete button for comments of same user
 
     - hotwire comments loading
 
