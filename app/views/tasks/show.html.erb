@@ -23,7 +23,13 @@
     </div>
     </div>
       <section class="comments-section">
-        <% @comments.each do |comment| %>
+        <div data-controller="visibility">
+          <button class="base-btn-2" type="button" data-action="visibility#toggle" data-visibility-targets-param="comment-form-<%= @task.id %>">Comment</button>
+          <div id="comment-form-<%= @task.id %>" hidden class="comment-form">
+              <%= render  "comments/commentForm", comment: nil %>
+          </div>
+        </div>
+        <% @recentComments.each do |comment| %>
         <div class="comment-box" id="comment_<%= comment.id %>" data-controller="visibility">
           <div class="comment-user">
             <h4 class="comment-username"><%= comment.user.username %></h4>
@@ -33,14 +39,17 @@
             <p><%= comment.body %></p>
             <div class="comment-buttons">
               <% if Comment.where(parent_id: comment.id).count > 0 %>
-                <button class="comment-button" type="button" data-action="visibility#toggle" data-visibility-targets-param="replies-<%= comment.id %>"> <%= Comment.where(parent_id: comment.id).count %> replies</button>
+                <button class="base-btn-2-mini" type="button" data-action="visibility#toggle" data-visibility-targets-param="replies-<%= comment.id %>"> <%= Comment.where(parent_id: comment.id).count %> replies</button>
               <% end %>
-              <button class="comment-button" type="button" data-action="visibility#show" data-visibility-targets-param="comment-form-<%= comment.id %>">Reply</button>
+              <button class="base-btn-2-mini" type="button" data-action="visibility#show" data-visibility-targets-param="comment-form-<%= comment.id %>">Reply</button>
+              <% if @currentuser == comment.user %>
+                <%= button_to 'Destroy', comment_path(comment), method: :delete, class: 'base-btn-2-mini' %>
+              <% end %>
             </div>
           </div>
         </div>
         <div id="comment-form-<%= comment.id %>" hidden class="comment-form">
-            <%= render  "comments/commentForm", comment: comment %>
+            <%= render  "comments/replyForm", comment: comment %>
         </div>
         <div id="replies-<%= comment.id %>" hidden>
           <%= render "comments/replies", comment: comment %>
