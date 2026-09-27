@@ -1,0 +1,22 @@
+<%= form_with model: [@task, Comment.new], class: "comment-reply-form" do |form| %>
+  
+  <div class="comment-box" id="comment_<%= comment.id %>" data-controller="visibility">
+    <div class="comment-user">
+      <h4 class="comment-username"><%= current_user.username %></h4>
+      <p class="comment-time"> 0 min ago</p>
+    </div>
+  <%= form.hidden_field :parent_id, value: comment.id %>
+
+  <%= form.text_area :body, placeholder: "Write a reply...", class: "comment-body", required: true %>
+  <div class="comment-buttons">
+    <%= form.submit "Reply", class: "base-btn-2-mini"%>
+    <button
+    type="button"
+    data-action="visibility#hide"
+    data-visibility-targets-param="comment-form-<%= comment.id %>"
+    class="base-btn-2-mini">
+    Cancel
+    </button>
+  </div>
+  </div>
+<% end %>
