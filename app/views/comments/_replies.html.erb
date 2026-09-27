@@ -13,9 +13,8 @@
                 <button class="base-btn-2-mini" type="button" data-action="visibility#toggle" data-visibility-targets-param="replies-<%= comment.id %>"> <%= Comment.where(parent_id: comment.id).count %> replies</button>
               <% end %>
               <button class="base-btn-2-mini" type="button" data-action="visibility#show" data-visibility-targets-param="comment-form-<%= comment.id %>">Reply</button>
-              <% if @currentuser == comment.user %>
-                <p>This is your comment! </p>
-                <%= button_to 'Destroy', comment_path(comment), method: :delete, class: 'base-btn-2-mini' %>
+              <% if current_user == comment.user %>
+                <%= button_to 'X', task_comment_path(@task, comment), method: :delete, class: 'base-btn-2-mini btn-destroy' %>
               <% end %>
             </div>
           </div>

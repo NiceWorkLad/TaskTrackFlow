@@ -69,7 +69,7 @@ $btn-size-xl-font-size: 18px;
 
   .base-btn-2-mini {
     font-size: 10px;
-    padding: 0.37rem 1.2rem;
+    padding: 0.37rem 0.7rem;
     margin: 2px;
     font-weight: 800;
      box-shadow: 1px 1px 0 var(--border-default);
@@ -424,4 +424,12 @@ $btn-size-xl-font-size: 18px;
   border: 0;
   background: none;
   font: inherit;
+}
+
+.btn-destroy {
+  transition: background-color 0.5s;
+}
+.btn-destroy:hover {
+  background-color: var(--accent-color);
+  color: var(--text-primary);
 }
