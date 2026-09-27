@@ -62,3 +62,52 @@
 .comment-button:hover {
   transform: translate(-2px, -2px);
 }
+
+@media (max-width: 768px) {
+  .comments-section {
+    width: 90%;
+  }
+
+  .comment-box {
+    padding: 5px 12px;
+  }
+
+  .comment-user {
+    gap: 10px;
+  }
+
+  .comment-body {
+    font-size: 16px;
+  }
+
+  .comment-username {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comments-section {
+    width: 100%;
+  }
+
+  .reply-section {
+    margin-left: 15px;
+  }
+
+  .comment-box {
+    margin: 5px 0;
+    padding: 5px 10px;
+  }
+
+  .comment-user {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .comment-buttons {
+    flex-wrap: wrap;
+  }
+}
+
+

@@ -42,7 +42,7 @@ $btn-size-xl-font-size: 18px;
   .base-btn-1:hover { color: var(--border-default); }
   .base-btn-1:hover::before { transform: scaleX(1); }
 
-  .base-btn-2 {
+  .base-btn-2,  .base-btn-2-mini{
     margin: 10px;
     position: relative;
     padding: 0.75rem 2.4rem;
@@ -58,14 +58,32 @@ $btn-size-xl-font-size: 18px;
     transition: box-shadow 0.1s ease, transform 0.1s ease;
     display: inline;
   }
-  .base-btn-2:hover {
+  .base-btn-2:hover{
     transform: translate(-3px, -3px);
     box-shadow: 6px 6px 0 var(--border-default);
   }
-  .base-btn-2:active {
+  .base-btn-2:active{
     transform: translate(0, 0);
     box-shadow: 0 0 0 var(--border-default);
   }
+
+  .base-btn-2-mini {
+    font-size: 10px;
+    padding: 0.37rem 1.2rem;
+    margin: 2px;
+    font-weight: 800;
+     box-shadow: 1px 1px 0 var(--border-default);
+  }
+
+  .base-btn-2-mini:hover{
+    transform: translate(-1px, -1px);
+    box-shadow: 2px 2px 0 var(--border-default);
+  }
+  .base-btn-2-mini:active{
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 var(--border-default);
+  }
+
 
   .base-btn-3 {
     position: relative;
