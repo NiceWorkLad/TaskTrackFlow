@@ -9,9 +9,6 @@
       </div>
       <div class="page-show__main-buttons">
         <% end %>
-        <% if current_user == @task.user %>
-        <%= link_to 'Edit', edit_task_path(@task), class: 'btn-edit' %>
-        <% end %>
       </div>
     </div>
     <div class="page-show__details">
@@ -24,7 +21,12 @@
     </div>
       <section class="comments-section">
         <div data-controller="visibility">
+          <div class="page-show__buttons">
+          <% if current_user == @task.user %>
+        <%= button_to 'Edit', edit_task_path(@task), method: :get, class: 'base-btn-2' %>
+        <% end %>
           <button class="base-btn-2" type="button" data-action="visibility#toggle" data-visibility-targets-param="comment-form-<%= @task.id %>">Comment</button>
+          </div>
           <div id="comment-form-<%= @task.id %>" hidden class="comment-form">
               <%= render  "comments/commentForm", comment: nil %>
           </div>
