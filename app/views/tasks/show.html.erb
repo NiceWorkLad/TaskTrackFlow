@@ -18,55 +18,31 @@
       </div>
       <p class="page-show__description wrap-text-word-break"><%= @task.description %></p>
     </div>
+  </div>
+  <section class="comments-section">
+    <div data-controller="visibility">
+      <div class="page-show__buttons">
+        <%= button_to 'Edit', edit_task_path(@task), method: :get, class: 'base-btn-2' %>
+        <button class="base-btn-2" type="button" data-action="visibility#toggle" data-visibility-targets-param="comment-form-<%= @task.id %>">Comment</button>
+      </div>
+      <div id="comment-form-<%= @task.id %>" hidden class="comment-form">
+        <%= render  "comments/commentForm", comment: nil %>
+      </div>
     </div>
-      <% if @current_user %>
-      <section class="comments-section">
-        <div data-controller="visibility">
-          <div class="page-show__buttons">
-            <% if current_user == @task.user %>
-            <%= button_to 'Edit', edit_task_path(@task), method: :get, class: 'base-btn-2' %>
-            <% end %>
-          <button class="base-btn-2" type="button" data-action="visibility#toggle" data-visibility-targets-param="comment-form-<%= @task.id %>">Comment</button>
-          </div>
-          <div id="comment-form-<%= @task.id %>" hidden class="comment-form">
-              <%= render  "comments/commentForm", comment: nil %>
-          </div>
-        </div>
-        
-        <% @recentComments.each do |comment| %>
-        <div class="comment-box" id="comment_<%= comment.id %>" data-controller="visibility">
-          <div class="comment-user">
-            <h4 class="comment-username"><%= comment.user.username %></h4>
-            <p class="comment-time"><% elapsed_seconds = (Time.current - comment.created_at).to_i %><% if elapsed_seconds < 1.hour %><%= pluralize([elapsed_seconds / 1.minute, 1].max, "min") %> ago<% elsif elapsed_seconds < 1.day %><%= pluralize(elapsed_seconds / 1.hour, "hour") %> ago<% else %><%= pluralize(elapsed_seconds / 1.day, "day") %> ago<% end %></p>
-          </div>
-          <div class="comment-body">
-            <p><%= comment.body %></p>
-            <div class="comment-buttons">
-              <% if Comment.where(parent_id: comment.id).count > 0 %>
-                <button class="base-btn-2-mini" type="button" data-action="visibility#toggle" data-visibility-targets-param="replies-<%= comment.id %>"> <%= Comment.where(parent_id: comment.id).count %> replies</button>
-              <% end %>
-                  <button class="base-btn-2-mini" type="button" data-action="visibility#show" data-visibility-targets-param="comment-form-<%= comment.id %>">Reply</button>
-              <% if current_user == comment.user %>
-                <%= button_to 'X', task_comment_path(@task, comment), method: :delete, class: 'base-btn-2-mini btn-destroy' %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div id="comment-form-<%= comment.id %>" hidden class="comment-form">
-            <%= render  "comments/replyForm", comment: comment %>
-        </div>
-        <div id="replies-<%= comment.id %>" hidden>
-          <%= render "comments/replies", comment: comment %>
-        </div>
+    
+    <div id="comments">
+      <% @recentComments.each do |comment| %>
+        <% if @current_user %>
+          <%= render "comments/comment", comment: comment %>
+        <% else %>
+          <%= render "comments/commentGuest", comment: comment %>
+        <% end %>
       <% end %>
-      </section>
-      <% else %>
-        <%= render "tasks/showCommentsGuest" %>
-      <% end %>
-  </div>
-  <% else %>
-  <div class="page-show_task">
-    <h2>You do not have permission to view this task</h2>
-  </div>
-  <% end%>
+      </div>
+  </section>
 </div>
+  <% else %>
+<div class="page-show_task">
+  <h2>You do not have permission to view this task</h2>
+</div>
+  <% end%>

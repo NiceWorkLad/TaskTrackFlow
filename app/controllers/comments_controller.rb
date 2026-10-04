@@ -7,11 +7,22 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to @task
+      respond_to do |format|
+        format.html { redirect_to @task }
+        format.turbo_stream
+      end
     else
-      redirect_to @task, alert: "Comment could not be added at this time."
+      respond_to do |format|
+        format.html do
+        redirect_to @task, alert: "Comment could not be added at this time."
+      end
+
+      format.turbo_stream do
+        redirect_to @task, alert: "Comment could not be added at this time."
+      end
     end
   end
+end
 
   def destroy
     @comment = @task.comments.find(params[:id])

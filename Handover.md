@@ -1,14 +1,8 @@
 # TaskTracker Repository Handover Sheet
 
     
-    - be able to reply to comments
-
-    - add btn for comment to tasks
-
-    - add delete button for comments of same user
-
-    - hotwire comments loading
-
+    1. Get replies to show upon submit
+    2. Get replies Btn to show upon submit
 ## Bugs
     Auto Correct doesn't update markdown on iphone
 

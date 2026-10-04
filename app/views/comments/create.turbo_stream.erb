@@ -1,0 +1,24 @@
+<% if @comment.parent_id.present? %>
+
+  <%= turbo_stream.prepend "replies-#{@comment.parent_id}" do %>
+    <%= render "comments/reply", comment: @comment %>
+  <% end %>
+
+  <%= turbo_stream.replace "replies-button-#{@comment.parent_id}" do %>
+    <button
+      id="replies-button-<%= @comment.parent_id %>"
+      class="base-btn-2-mini"
+      type="button"
+      data-action="visibility#toggle"
+      data-visibility-targets-param="replies-<%= @comment.parent_id %>">
+      <%= Comment.where(parent_id: @comment.parent_id).count %> replies
+    </button>
+  <% end %>
+
+<% else %>
+
+  <%= turbo_stream.prepend "comments" do %>
+    <%= render "comments/comment", comment: @comment %>
+  <% end %>
+
+<% end %>

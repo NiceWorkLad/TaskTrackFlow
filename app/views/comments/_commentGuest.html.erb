@@ -1,14 +1,4 @@
-<section class="comments-section">
-        <div data-controller="visibility">
-          <div class="page-show__buttons">
-            <% if current_user == @task.user %>
-            <%= button_to 'Edit', edit_task_path(@task), method: :get, class: 'base-btn-2' %>
-            <% end %>
-          </div>
-        </div>
-        
-        <% @recentComments.each do |comment| %>
-        <div class="comment-box" id="comment_<%= comment.id %>" data-controller="visibility">
+<div class="comment-box" id="comment_<%= comment.id %>" data-controller="visibility">
           <div class="comment-user">
             <h4 class="comment-username"><%= comment.user.username %></h4>
             <p class="comment-time"><% elapsed_seconds = (Time.current - comment.created_at).to_i %><% if elapsed_seconds < 1.hour %><%= pluralize([elapsed_seconds / 1.minute, 1].max, "min") %> ago<% elsif elapsed_seconds < 1.day %><%= pluralize(elapsed_seconds / 1.hour, "hour") %> ago<% else %><%= pluralize(elapsed_seconds / 1.day, "day") %> ago<% end %></p>
@@ -17,7 +7,7 @@
             <p><%= comment.body %></p>
             <div class="comment-buttons">
               <% if Comment.where(parent_id: comment.id).count > 0 %>
-                <button class="base-btn-2-mini" type="button" data-action="visibility#toggle" data-visibility-targets-param="replies-<%= comment.id %>"> <%= Comment.where(parent_id: comment.id).count %> replies</button>
+                <button id="replies-button-<%= comment.id %>" class="base-btn-2-mini" type="button" data-action="visibility#toggle" data-visibility-targets-param="replies-<%= comment.id %>"><%= Comment.where(parent_id: comment.id).count %> replies</button>
               <% end %>
             </div>
           </div>
@@ -25,5 +15,3 @@
         <div id="replies-<%= comment.id %>" hidden>
           <%= render "comments/replies", comment: comment %>
         </div>
-      <% end %>
-      </section>
