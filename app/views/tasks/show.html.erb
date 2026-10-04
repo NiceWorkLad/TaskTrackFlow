@@ -19,18 +19,20 @@
       <p class="page-show__description wrap-text-word-break"><%= @task.description %></p>
     </div>
     </div>
+      <% if @current_user %>
       <section class="comments-section">
         <div data-controller="visibility">
           <div class="page-show__buttons">
-          <% if current_user == @task.user %>
-        <%= button_to 'Edit', edit_task_path(@task), method: :get, class: 'base-btn-2' %>
-        <% end %>
+            <% if current_user == @task.user %>
+            <%= button_to 'Edit', edit_task_path(@task), method: :get, class: 'base-btn-2' %>
+            <% end %>
           <button class="base-btn-2" type="button" data-action="visibility#toggle" data-visibility-targets-param="comment-form-<%= @task.id %>">Comment</button>
           </div>
           <div id="comment-form-<%= @task.id %>" hidden class="comment-form">
               <%= render  "comments/commentForm", comment: nil %>
           </div>
         </div>
+        
         <% @recentComments.each do |comment| %>
         <div class="comment-box" id="comment_<%= comment.id %>" data-controller="visibility">
           <div class="comment-user">
@@ -43,7 +45,7 @@
               <% if Comment.where(parent_id: comment.id).count > 0 %>
                 <button class="base-btn-2-mini" type="button" data-action="visibility#toggle" data-visibility-targets-param="replies-<%= comment.id %>"> <%= Comment.where(parent_id: comment.id).count %> replies</button>
               <% end %>
-              <button class="base-btn-2-mini" type="button" data-action="visibility#show" data-visibility-targets-param="comment-form-<%= comment.id %>">Reply</button>
+                  <button class="base-btn-2-mini" type="button" data-action="visibility#show" data-visibility-targets-param="comment-form-<%= comment.id %>">Reply</button>
               <% if current_user == comment.user %>
                 <%= button_to 'X', task_comment_path(@task, comment), method: :delete, class: 'base-btn-2-mini btn-destroy' %>
               <% end %>
@@ -57,7 +59,10 @@
           <%= render "comments/replies", comment: comment %>
         </div>
       <% end %>
-    </section>
+      </section>
+      <% else %>
+        <%= render "tasks/showCommentsGuest" %>
+      <% end %>
   </div>
   <% else %>
   <div class="page-show_task">
