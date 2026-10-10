@@ -31,9 +31,9 @@
         </button>
       <% end %>
 
-      <% if current_user == comment.user %>
+      <% if viewer == comment.user %>
         <%= button_to 'X',
-            task_comment_path(@task, comment),
+            task_comment_path(comment.task, comment),
             method: :delete,
             class: 'base-btn-2-mini btn-destroy' %>
       <% end %>
@@ -50,5 +50,5 @@
 <% end %>
 
 <div id="replies-<%= comment.id %>" hidden>
-  <%= render "comments/replies", comment: comment %>
+  <%= render "comments/replies", comment: comment, viewer: viewer %>
 </div>

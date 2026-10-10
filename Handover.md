@@ -1,8 +1,7 @@
 # TaskTracker Repository Handover Sheet
 
     
-    1. Get replies to show upon submit
-    2. Get replies Btn to show upon submit
+    
 ## Bugs
     Auto Correct doesn't update markdown on iphone
 

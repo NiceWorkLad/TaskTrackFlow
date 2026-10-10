@@ -1,0 +1,8 @@
+<button
+  id="replies-button-<%= comment.id %>"
+  class="base-btn-2-mini"
+  type="button"
+  data-action="visibility#toggle"
+  data-visibility-targets-param="replies-<%= comment.id %>">
+  <%= comment.replies.count %> replies
+</button>

@@ -10,8 +10,8 @@
                 <button id="replies-button-<%= comment.id %>" class="base-btn-2-mini" type="button" data-action="visibility#toggle" data-visibility-targets-param="replies-<%= comment.id %>"><%= Comment.where(parent_id: comment.id).count %> replies</button>
               <% end %>
                   <button class="base-btn-2-mini" type="button" data-action="visibility#show" data-visibility-targets-param="comment-form-<%= comment.id %>">Reply</button>
-              <% if current_user == comment.user %>
-                <%= button_to 'X', task_comment_path(@task, comment), method: :delete, class: 'base-btn-2-mini btn-destroy' %>
+              <% if viewer == comment.user %>
+                <%= button_to 'X', task_comment_path(comment.task, comment),method: :delete, class: 'base-btn-2-mini btn-destroy' %>
               <% end %>
             </div>
           </div>
@@ -20,5 +20,5 @@
             <%= render  "comments/replyForm", comment: comment %>
         </div>
         <div id="replies-<%= comment.id %>" hidden>
-          <%= render "comments/replies", comment: comment %>
+          <%= render "comments/replies", comment: comment, viewer: viewer %>
         </div>

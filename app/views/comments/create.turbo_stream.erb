@@ -1,7 +1,7 @@
 <% if @comment.parent_id.present? %>
 
   <%= turbo_stream.prepend "replies-section-#{@comment.parent_id}" do %>
-    <%= render "comments/reply", comment: @comment %>
+    <%= render "comments/reply", comment: @comment, viewer: current_user %>
   <% end %>
 
   <%= turbo_stream.replace "replies-button-#{@comment.parent_id}" do %>
@@ -18,7 +18,9 @@
 <% else %>
 
   <%= turbo_stream.prepend "comments" do %>
-    <%= render "comments/comment", comment: @comment %>
+    <%= render "comments/comment",
+           comment: @comment,
+           viewer: current_user %>
   <% end %>
 
 <% end %>

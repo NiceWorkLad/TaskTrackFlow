@@ -11,30 +11,40 @@ class Comment < ApplicationRecord
 
   after_create_commit :broadcast_comment
 
+  after_destroy_commit :broadcast_remove
+
   private
 
   def broadcast_comment
     if parent_id.present?
       broadcast_prepend_to(
-        task, :comments,
-        target: "replies-section-#{parent_id}",
-        partial: "comments/reply",
-        locals: { comment: self }
-      )
+      task, :comments,
+      target: "replies-section-#{parent_id}",
+      partial: "comments/reply",
+      locals: { comment: self, viewer: nil }
+    )
 
-      broadcast_replace_to(
-        task, :comments,
-        target: "replies-button-#{parent_id}",
-        partial: "comments/replies_button",
-        locals: { comment: parent }
+    broadcast_replace_to(
+      task, :comments,
+      target: "replies-button-#{parent_id}",
+      partial: "comments/replies_button",
+      locals: { comment: parent }
       )
     else
       broadcast_prepend_to(
         task, :comments,
         target: "comments",
         partial: "comments/comment",
-        locals: { comment: self }
+        locals: { comment: self, viewer: nil }
       )
     end
+  end
+
+  def broadcast_remove
+    broadcast_remove_to(
+      task,
+      :comments,
+      target: "comment_#{id}"
+    )
   end
 end

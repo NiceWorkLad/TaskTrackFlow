@@ -29,9 +29,14 @@ end
 
     if @comment.user == current_user
       @comment.destroy
-    end
 
-    redirect_to @task
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to @task }
+      end
+    else
+      redirect_to @task, alert: "You cannot delete this comment."
+    end
   end
 
   private

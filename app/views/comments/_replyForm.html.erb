@@ -1,4 +1,4 @@
-<%= form_with model: [@task, Comment.new],
+<%= form_with model: [comment.task, Comment.new],
       class: "comment-reply-form",
       data: {
         controller: "visibility",
@@ -8,7 +8,7 @@
 
   <div class="comment-box">
     <div class="comment-user">
-      <h4 class="comment-username"><%= current_user.username %></h4>
+      <h4 class="comment-username"><%= comment.user.username %></h4>
       <p class="comment-time">0 min ago</p>
     </div>
 

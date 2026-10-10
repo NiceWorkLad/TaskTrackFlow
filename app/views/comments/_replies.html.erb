@@ -1,12 +1,14 @@
 <div data-controller="visibility">
-    <section class="reply-section">
-        <% Comment.where(parent_id: comment.id).order(created_at: :desc).each do |reply| %>
-          <% if @current_user %>
-            <%= render "comments/reply", comment: reply, id: "replies-section-#{comment.parent_id}" %>
-          <% else %>
-            <%= render "comments/replyGuest", comment: reply, id: "replies-section-#{comment.parent_id}" %>
-          <% end %>
-        <% end %>
-    </section>
-    <%# <button type="button" data-action="visibility#hide" data-visibility-targets-param="replies-comment-id">Hide replies</button> %>
+  <section class="reply-section">
+    <% comment.replies.order(created_at: :desc).each do |reply| %>
+      <% if viewer.present? %>
+        <%= render "comments/reply",
+            comment: reply,
+            viewer: viewer %>
+      <% else %>
+        <%= render "comments/replyGuest",
+            comment: reply %>
+      <% end %>
+    <% end %>
+  </section>
 </div>

@@ -1,6 +1,6 @@
 <div class="page-show">
-  <%= turbo_stream_from @task, :comments %>
   <% if @showuser %>
+  <%= turbo_stream_from @task, :comments %>
   <div class="page-show__task">
     <div class="page-show__main">
       <h1 class="page-show__title wrap-text-word-break"><%= @task.title %></h1>
@@ -23,23 +23,32 @@
   <section class="comments-section">
     <div data-controller="visibility">
       <div class="page-show__buttons">
-        <%= button_to 'Edit', edit_task_path(@task), method: :get, class: 'base-btn-2' %>
+        <% if @current_user == @task.user %>
+          <%= button_to 'Edit', edit_task_path(@task),
+          method: :get, class: 'base-btn-2' %>
+        <% end %>
+        <% if current_user %>
         <button class="base-btn-2" type="button" data-action="visibility#toggle" data-visibility-targets-param="comment-form-<%= @task.id %>">Comment</button>
+        <% end %>
       </div>
+      <% if current_user %>
       <div id="comment-form-<%= @task.id %>" hidden class="comment-form">
         <%= render  "comments/commentForm", comment: nil %>
       </div>
+      <% end %>
     </div>
     
     <div id="comments">
       <% @recentComments.each do |comment| %>
         <% if @current_user %>
-          <%= render "comments/comment", comment: comment %>
+        <%= render "comments/comment",
+          comment: comment,
+          viewer: @current_user %>
         <% else %>
           <%= render "comments/commentGuest", comment: comment %>
         <% end %>
       <% end %>
-      </div>
+    </div>
   </section>
 </div>
   <% else %>
