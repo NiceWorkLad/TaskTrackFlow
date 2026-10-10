@@ -1,6 +1,6 @@
 <% if @comment.parent_id.present? %>
 
-  <%= turbo_stream.prepend "replies-#{@comment.parent_id}" do %>
+  <%= turbo_stream.prepend "replies-section-#{@comment.parent_id}" do %>
     <%= render "comments/reply", comment: @comment %>
   <% end %>
 
