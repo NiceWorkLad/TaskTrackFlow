@@ -1,4 +1,5 @@
 <div class="page-show">
+  <%= turbo_stream_from @task, :comments %>
   <% if @showuser %>
   <div class="page-show__task">
     <div class="page-show__main">
