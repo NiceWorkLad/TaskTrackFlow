@@ -5,11 +5,11 @@
           </div>
           <div class="comment-body">
             <p><%= comment.body %></p>
-            <div class="comment-buttons">
-              <% if Comment.where(parent_id: comment.id).count > 0 %>
-                <button id="replies-button-<%= comment.id %>" class="base-btn-2-mini" type="button" data-action="visibility#toggle" data-visibility-targets-param="replies-<%= comment.id %>"><%= Comment.where(parent_id: comment.id).count %> replies</button>
-              <% end %>
-                  <button class="base-btn-2-mini" type="button" data-action="visibility#show" data-visibility-targets-param="comment-form-<%= comment.id %>">Reply</button>
+            <div id="comment-buttons-<%= comment.id %>" class="comment-buttons">
+              <div id="replies-button-container-<%= comment.id %>">
+                <%= render "comments/replies_button", comment: comment %>
+              </div>
+                  <button class="base-btn-2-mini" type="button" data-action="visibility#show" data-visibility-targets-param="comment-form-<%= comment.id %>,replies-<%= comment.id %>">Reply</button>
               <% if viewer == comment.user %>
                 <%= button_to 'X', task_comment_path(comment.task, comment),method: :delete, class: 'base-btn-2-mini btn-destroy' %>
               <% end %>

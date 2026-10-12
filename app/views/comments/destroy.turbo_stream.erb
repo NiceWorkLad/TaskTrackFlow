@@ -1,1 +1,7 @@
 <%= turbo_stream.remove "comment_#{@comment.id}" %>
+
+<% if @comment.parent_id.present? %>
+  <%= turbo_stream.update "replies-button-container-#{@comment.parent_id}" do %>
+    <%= render "comments/replies_button", comment: @comment.parent %>
+  <% end %>
+<% end %>
