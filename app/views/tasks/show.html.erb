@@ -28,8 +28,7 @@
           method: :get, class: 'base-btn-2' %>
         <% end %>
         <% if current_user %>
-        <button class="base-btn-2" type="button" data-action="visibility#toggle" data-visibility-targets-param="comment-form-<%= @task.id %>">Comment</button>
-        <% end %>
+        <button class="base-btn-2"type="button"data-action="visibility#show"data-visibility-targets-param="comment-form-<%= @task.id %>">Comment</button><% end %>
       </div>
       <% if current_user %>
       <div id="comment-form-<%= @task.id %>" hidden class="comment-form">
