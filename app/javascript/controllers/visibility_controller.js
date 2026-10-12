@@ -7,6 +7,14 @@ export default class extends Controller {
 
   show(event) {
     this.setVisibility(event.params.targets, false)
+
+    event.params.targets.split(",").forEach((id) => {
+      const target = document.getElementById(id.trim())
+
+      if (target) {
+        target.querySelector("textarea, input:not([type=hidden])")?.focus()
+      }
+    })
   }
 
   hide(event) {

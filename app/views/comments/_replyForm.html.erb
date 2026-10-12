@@ -1,7 +1,7 @@
 <%= form_with model: [comment.task, Comment.new],
       class: "comment-reply-form",
       data: {
-        controller: "visibility",
+        controller: "form visibility",
         action: "turbo:submit-end->visibility#hideAfterSubmit",
         visibility_targets_param: "comment-form-#{comment.id}"
       } do |form| %>
@@ -15,6 +15,7 @@
     <%= form.hidden_field :parent_id, value: comment.id %>
 
     <%= form.text_area :body,
+          data: { action: "keydown->form#submitOnEnter" },
           placeholder: "Write a reply...",
           class: "comment-body",
           required: true %>

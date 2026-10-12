@@ -1,6 +1,7 @@
 <%= form_with model: [@task, Comment.new],
       class: "comment-form",
       data: {
+        controller: "form",
         action: "turbo:submit-end->visibility#hideAfterSubmit",
         visibility_targets_param: "comment-form-#{@task.id}"
       } do |form| %>
@@ -10,6 +11,7 @@
     </div>
 
     <%= form.text_area :body,
+          data: { action: "keydown->form#submitOnEnter" },
           placeholder: "Write a comment...",
           class: "comment-body",
           required: true %>
