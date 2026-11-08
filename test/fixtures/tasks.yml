@@ -1,11 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Task ids are UUID strings, so fixtures set them by hand.
 
-one:
-  title: MyString
-  description: MyText
-  completed: false
-
-two:
-  title: MyString
-  description: MyText
-  completed: false
+alices_task:
+  id: 3f6c2a4e-8b1d-4c7a-9e2f-1a5b6c7d8e9f
+  title: Alice's task
+  description: Written by Alice
+  body: Only Alice should be able to change this.
+  user: alice
+  visibility: 0
