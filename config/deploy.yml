@@ -97,7 +97,8 @@ builder:
 ssh:
   user: niceworklad
   keys:
-    - ~/.ssh/id_ed25519_kamal
+    - ~/.ssh/id_ed25519_kamal   # other deploy machine
+    - ~/.ssh/id_ed25519         # this machine (WSL)
 
 # Use accessory services (secrets come from .kamal/secrets).
 # accessories:
