@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!, except: [ :public_index, :show ]
   before_action :set_view_mode, only: [ :index, :public_index ]
+  before_action :set_own_task, only: [ :edit, :update, :destroy ]
 
   def index
     @tasks = current_user.tasks
@@ -37,11 +38,9 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def update
-    @task = Task.find(params[:id])
     if @task.update(task_params)
       redirect_to task_path(@task), notice: "Task was successfully updated."
     else
@@ -50,12 +49,17 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
     @task.destroy
     redirect_to tasks_path, notice: "Task was successfully deleted."
   end
 
   private
+
+  # Looks the task up among the signed-in user's own tasks, so a task that
+  # belongs to someone else is a 404 rather than something they can change.
+  def set_own_task
+    @task = current_user.tasks.find(params[:id])
+  end
 
   def task_params
     params.require(:task).permit(:title, :description, :status, :visibility, :body, :due_date, :completed)
