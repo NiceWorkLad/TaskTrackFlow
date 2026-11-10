@@ -85,6 +85,10 @@ $btn-size-xl-font-size: 18px;
   }
 
 
+  .base-btn-2:focus {
+    outline: 3px solid var(--danger-color);
+  }
+
   .base-btn-3 {
     position: relative;
     padding: 0.75rem 2.4rem;
