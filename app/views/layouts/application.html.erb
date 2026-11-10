@@ -7,6 +7,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="google-site-verification" content="UozdnzjqMXgusDww6sizw4gN9QPX1c8aEHWxShOMUWU" />
     <%= csrf_meta_tags %>
+    <meta name="current-user-id" content="<%= current_user&.id %>">
     <%= csp_meta_tag %>
 
     <%= yield :head %>

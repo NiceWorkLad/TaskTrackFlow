@@ -111,3 +111,8 @@
 }
 
 
+
+// Wrappers revealed by viewer_controller.js shouldn't affect the button layout
+[data-controller~="viewer"]:not([hidden]) {
+  display: contents;
+}

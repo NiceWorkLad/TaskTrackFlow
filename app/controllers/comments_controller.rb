@@ -43,6 +43,11 @@ end
 
   def set_task
     @task = Task.find(params[:task_id])
+
+    # Private tasks (visibility 2) are only open to their owner, same as tasks#show
+    if @task.visibility >= 2 && @task.user_id != current_user.id
+      redirect_to tasks_path, alert: "You do not have permission to view this task."
+    end
   end
 
   def comment_params
