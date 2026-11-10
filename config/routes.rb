@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :tasks
+  resources :tasks do
+  resources :comments, only: [ :create, :destroy ]
+end
 
   get "public_tasks", to: "tasks#public_index", as: "public_tasks"
 

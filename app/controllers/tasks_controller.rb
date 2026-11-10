@@ -19,6 +19,9 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
     @showuser = @task.visibility < 2 || current_user&.id == @task.user_id
+    @comments = Comment.where(task_id: @task.id, parent_id: nil)
+    @recentComments = @comments.order(created_at: :desc)
+    @current_user = current_user
   end
 
   def new

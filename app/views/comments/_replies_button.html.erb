@@ -1,0 +1,12 @@
+<% reply_count = comment.replies.count %>
+
+<% if reply_count > 0 %>
+  <button
+    id="replies-button-<%= comment.id %>"
+    class="base-btn-2-mini"
+    type="button"
+    data-action="visibility#toggle"
+    data-visibility-targets-param="replies-<%= comment.id %>">
+    <%= reply_count %> replies
+  </button>
+<% end %>

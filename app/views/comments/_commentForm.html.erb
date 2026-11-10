@@ -1,0 +1,31 @@
+<%= form_with model: [@task, Comment.new],
+      class: "comment-form",
+      data: {
+        controller: "form",
+        action: "turbo:submit-end->visibility#hideAfterSubmit",
+        visibility_targets_param: "comment-form-#{@task.id}"
+      } do |form| %>
+  <div class="comment-box">
+    <div class="comment-user">
+      <h4 class="comment-username"><%= current_user.username %></h4>
+    </div>
+
+    <%= form.text_area :body,
+          data: { action: "keydown->form#submitOnEnter" },
+          placeholder: "Write a comment...",
+          class: "comment-body",
+          required: true %>
+
+    <div class="comment-buttons">
+      <%= form.submit "Comment", class: "base-btn-2-mini" %>
+
+      <button
+        type="button"
+        data-action="visibility#hide"
+        data-visibility-targets-param="comment-form-<%= @task.id %>"
+        class="base-btn-2-mini">
+        Cancel
+      </button>
+    </div>
+  </div>
+<% end %>

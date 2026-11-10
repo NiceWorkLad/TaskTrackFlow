@@ -1,0 +1,14 @@
+<div data-controller="visibility">
+  <section id="replies-section-<%= comment.id %>" class="reply-section">
+    <% comment.replies.order(created_at: :desc).each do |reply| %>
+      <% if viewer.present? %>
+        <%= render "comments/reply",
+            comment: reply,
+            viewer: viewer %>
+      <% else %>
+        <%= render "comments/replyGuest",
+            comment: reply %>
+      <% end %>
+    <% end %>
+  </section>
+</div>

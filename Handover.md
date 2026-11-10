@@ -1,18 +1,11 @@
 # TaskTracker Repository Handover Sheet
 
-## Current Step
-
-
+    - Get Rady for Prod Push to comments branch
+    
 ## Bugs
     Auto Correct doesn't update markdown on iphone
 
 ## Next Steps / Wish list
-
-    - COMMENTS CSS get brach looking good with plannign via excalidraw for nice mobile and pc view
-
-    - REPLYIES CSS same as comment branch all together.
-
-    - HOTWIRE Comments loading, Replies loading
 
     - TASKS INDEX Filters for search Tasks
 
@@ -43,20 +36,24 @@
 
     ### Verify
 
-## Views
+    ### Visisbility
+
+    ### Form
 
 ## User Logins
     
-    - Email Verify
+    - Email Verify ( working fine )
 
-    - Google auth
+    - Google auth ( working with problem )
 
-    - GitHub auth
+    - GitHub auth ( not started )
 
 ## CSS Next Steps
     - Waiting On Planning
 
 ## Last Changes
+- Turbo frames for comments and replies and form_controller.js autoFocus, enterSubmit
+- Comments with single nested Replies
 - UUID and visibility for tasks Private Ulisted and Public
 - Comments (working in branch with replies not on main yet)
 - Google Works (With Whitelist until approved) in production

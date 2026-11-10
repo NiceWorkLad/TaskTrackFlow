@@ -1,0 +1,17 @@
+<div class="comment-box" id="comment_<%= comment.id %>" data-controller="visibility">
+          <div class="comment-user">
+            <h4 class="comment-username"><%= comment.user.username %></h4>
+            <p class="comment-time"><% elapsed_seconds = (Time.current - comment.created_at).to_i %><% if elapsed_seconds < 1.hour %><%= pluralize([elapsed_seconds / 1.minute, 1].max, "min") %> ago<% elsif elapsed_seconds < 1.day %><%= pluralize(elapsed_seconds / 1.hour, "hour") %> ago<% else %><%= pluralize(elapsed_seconds / 1.day, "day") %> ago<% end %></p>
+          </div>
+          <div class="comment-body">
+            <p><%= comment.body %></p>
+            <div class="comment-buttons">
+              <div id="replies-button-container-<%= comment.id %>">
+                <%= render "comments/replies_button", comment: comment %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="replies-<%= comment.id %>" hidden>
+          <%= render "comments/replies", comment: comment, viewer: nil %>
+        </div>
